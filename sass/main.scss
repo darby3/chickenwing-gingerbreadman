@@ -12,3 +12,17 @@
     font-size: 50px;
   }
 }
+
+// Some basic structural things
+
+#topbar {
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px dotted #323232;
+}
+
+#bottombar {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px dotted #323232;
+}

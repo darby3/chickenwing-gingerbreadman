@@ -1,0 +1,19 @@
+.main {
+  margin: 50px;
+  padding: 50px;
+  background: #0000ff;
+  color: #ffffff; }
+  .main a {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 50px; }
+
+#topbar {
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px dotted #323232; }
+
+#bottombar {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px dotted #323232; }
