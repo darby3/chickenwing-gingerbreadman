@@ -28,6 +28,24 @@
 }
 
 // Type
+
 * {
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+// Grids!
+
+.simple-list-grid {
+  display: grid;
+  grid-gap: 2rem 1rem;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+  li {
+    list-style: none;
+    padding: 1rem;
+    margin: 0;
+    border: 1px dotted #323232;
+  }
 }
