@@ -21,6 +21,25 @@
 * {
   font-family: 'Source Sans Pro', sans-serif; }
 
+html {
+  font-size: 20px; }
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.15; }
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.15; }
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.15; }
+
+p {
+  font-size: 1rem;
+  line-height: 1.5; }
+
 .simple-list-grid {
   display: grid;
   grid-gap: 2rem 1rem;
@@ -33,3 +52,27 @@
     padding: 1rem;
     margin: 0;
     border: 1px dotted #323232; }
+
+.into-it-grid {
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); }
+  .into-it-grid div {
+    padding: 0 1rem 1rem 1rem;
+    background: #142A54;
+    color: #efefef; }
+    .into-it-grid div h3 {
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px dotted #efefef;
+      text-transform: uppercase; }
+    .into-it-grid div a {
+      text-decoration: none;
+      background: #efefef;
+      color: #142A54;
+      transition: background 0.25s ease, color 0.25s ease;
+      padding: 0.25rem;
+      margin: 0 0.15rem; }
+      .into-it-grid div a:hover {
+        background: #142A54;
+        color: #efefef; }
