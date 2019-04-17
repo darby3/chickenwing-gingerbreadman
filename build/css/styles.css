@@ -40,6 +40,11 @@ p {
   font-size: 1rem;
   line-height: 1.5; }
 
+.home-page-section {
+  margin: 4rem 0;
+  padding-bottom: 4rem;
+  border-bottom: 1rem solid #1B7FD1; }
+
 .simple-list-grid {
   display: grid;
   grid-gap: 2rem 1rem;
@@ -66,13 +71,17 @@ p {
       margin-bottom: 1.5rem;
       border-bottom: 1px dotted #efefef;
       text-transform: uppercase; }
+    .into-it-grid div p {
+      line-height: 1.6; }
     .into-it-grid div a {
       text-decoration: none;
       background: #efefef;
       color: #142A54;
-      transition: background 0.25s ease, color 0.25s ease;
-      padding: 0.25rem;
-      margin: 0 0.15rem; }
+      transition: background 0.175s ease, color 0.175s ease;
+      padding: 0.1rem; }
+      .into-it-grid div a:visited {
+        background: #1e3f7d;
+        color: #efefef; }
       .into-it-grid div a:hover {
         background: #142A54;
         color: #efefef; }

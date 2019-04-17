@@ -57,6 +57,13 @@ p {
   line-height: 1.5;
 }
 
+// Home page helpers
+
+.home-page-section {
+  margin: 4rem 0;
+  padding-bottom: 4rem;
+  border-bottom: 1rem solid #1B7FD1;
+}
 // Grids!
 
 .simple-list-grid {
@@ -90,18 +97,24 @@ p {
       padding-bottom: 1.5rem;
       margin-bottom: 1.5rem;
       border-bottom: 1px dotted #efefef;
-
-
       text-transform: uppercase;
+    }
+
+    p {
+      line-height: 1.6;
     }
 
     a {
       text-decoration: none;
       background: #efefef;
       color: #142A54;
-      transition: background 0.25s ease, color 0.25s ease;
-      padding: 0.25rem;
-      margin: 0 0.15rem;
+      transition: background 0.175s ease, color 0.175s ease;
+      padding: 0.1rem;
+
+      &:visited {
+        background: lighten(#142A54, 10%);
+        color: #efefef;
+      }
 
       &:hover {
         background: #142A54;
