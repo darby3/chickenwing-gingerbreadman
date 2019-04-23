@@ -1,4 +1,10 @@
-# npm Scripts Starter
+# My Weird Site
+
+Needs a real name.
+
+## npm Scripts Starter
+
+This site is produced via my npm Scripts Starter build thingy. From the readme:
 
 The world is on fire but I'm finally getting around to learning how to set up and use npm scripts instead of Grunt or Gulp. So that's fun.
 
