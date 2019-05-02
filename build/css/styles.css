@@ -61,7 +61,7 @@ p {
 .into-it-grid {
   display: grid;
   grid-gap: 0.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); }
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
   .into-it-grid div {
     padding: 0 1rem 1rem 1rem;
     background: #142A54;
@@ -85,3 +85,17 @@ p {
       .into-it-grid div a:hover {
         background: #142A54;
         color: #efefef; }
+    .into-it-grid div ul {
+      margin: 0;
+      padding: 0.5rem;
+      border: 3px dotted rgba(255, 255, 255, 0.25);
+      border-radius: 12px; }
+    .into-it-grid div li {
+      list-style: none;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dotted rgba(255, 255, 255, 0.25); }
+      .into-it-grid div li:last-child {
+        border-bottom: none;
+        margin: 0;
+        padding: 0; }
