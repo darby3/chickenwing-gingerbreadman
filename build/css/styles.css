@@ -9,9 +9,38 @@
     font-size: 50px; }
 
 #topbar {
-  margin-bottom: 4rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px dotted #323232; }
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  border-bottom: 1px dotted #323232;
+  background: #1e3f7d;
+  color: #fff;
+  border-radius: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between; }
+  #topbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: normal; }
+    #topbar ul li {
+      margin: 0 1rem;
+      list-style: none; }
+      #topbar ul li a {
+        text-decoration: none;
+        background: #efefef;
+        color: #142A54;
+        transition: background 0.175s ease, color 0.175s ease;
+        padding: 0.1rem 0.5rem; }
+        #topbar ul li a:visited {
+          background: #1e3f7d;
+          color: #efefef; }
+        #topbar ul li a:hover {
+          background: #142A54;
+          color: #efefef; }
 
 #bottombar {
   margin-top: 4rem;

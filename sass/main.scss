@@ -16,9 +16,52 @@
 // Some basic structural things
 
 #topbar {
-  margin-bottom: 4rem;
-  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
   border-bottom: 1px dotted #323232;
+
+  background: #1e3f7d;
+  color: #fff;
+  border-radius: 1rem;
+
+
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: normal;
+
+    li {
+      margin: 0 1rem;
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        background: #efefef;
+        color: #142A54;
+        transition: background 0.175s ease, color 0.175s ease;
+        padding: 0.1rem 0.5rem;
+
+        &:visited {
+          background: lighten(#142A54, 10%);
+          color: #efefef;
+        }
+
+        &:hover {
+          background: #142A54;
+          color: #efefef;
+        }
+      }
+    }
+  }
 }
 
 #bottombar {
@@ -64,6 +107,7 @@ p {
   padding-bottom: 4rem;
   border-bottom: 1rem solid #1B7FD1;
 }
+
 // Grids!
 
 .simple-list-grid {
