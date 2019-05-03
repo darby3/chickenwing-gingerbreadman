@@ -129,7 +129,7 @@ p {
 
 .into-it-grid {
   display: grid;
-  grid-gap: 0.5rem;
+  grid-gap: 2rem 1rem;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   div {
@@ -137,6 +137,7 @@ p {
     background: #142A54;
     color: #efefef;
 
+    border-radius: 0.25rem 2rem 0.5rem 0.25rem;
     h3 {
       padding-bottom: 1.5rem;
       margin-bottom: 1.5rem;
