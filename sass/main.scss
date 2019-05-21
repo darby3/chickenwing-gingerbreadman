@@ -1,17 +1,18 @@
 @import "global/global-variables";
+@import '../node_modules/normalize.css/normalize';
 
-.main {
-  margin: $margin;
-  padding: $padding;
-  background: $blue;
-  color: #ffffff;
-
-  a {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 50px;
-  }
-}
+//.main {
+//  margin: $margin;
+//  padding: $padding;
+//  background: $blue;
+//  color: #ffffff;
+//
+//  a {
+//    color: #ffffff;
+//    font-weight: 700;
+//    font-size: 50px;
+//  }
+//}
 
 // Some basic structural things
 
@@ -23,8 +24,6 @@
   background: #1e3f7d;
   color: #fff;
   border-radius: 1rem;
-
-
 
   display: flex;
   flex-flow: row nowrap;
@@ -65,9 +64,13 @@
 }
 
 #bottombar {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px dotted #323232;
+  padding: 4rem;
+  background: #142A54;
+  color: #ABD904;
+
+  a {
+    color: #ABD904;
+  }
 }
 
 // Type
@@ -188,3 +191,47 @@ p {
     }
   }
 }
+
+
+// New home page
+
+.home__section {
+  padding: 4rem;
+}
+
+.home__section--title {
+  background: #F2EA7E;
+  color: #3E5902
+}
+
+.home__section--variant-1 {
+  --primary: #ABD904;
+  --secondary: #3E5902;
+  --linkcontrast: #fff;
+}
+
+.home__section--variant-2 {
+  --primary: #3E5902;
+  --secondary: #ABD904;
+  --linkcontrast: #000;
+}
+
+.home__section--variant-1,
+.home__section--variant-2 {
+  background: var(--primary);
+
+  a {
+    padding: 2rem;
+    background-color: var(--secondary);
+    color: var(--primary);
+    transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+    transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+      background-color: var(--linkcontrast);
+      color: var(--secondary);
+    }
+  }
+}
+
