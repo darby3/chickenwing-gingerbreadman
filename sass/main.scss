@@ -21,9 +21,9 @@
   padding: 0 1rem;
   border-bottom: 1px dotted #323232;
 
-  background: #1e3f7d;
-  color: #fff;
-  border-radius: 1rem;
+  background: #8A362B;
+  color: #F4EBDC;
+  //border-radius: 1rem;
 
   display: flex;
   flex-flow: row nowrap;
@@ -44,14 +44,14 @@
 
       a {
         text-decoration: none;
-        background: #efefef;
-        color: #142A54;
+        background: #F4EBDC;
+        color: #8A362B;
         transition: background 0.175s ease, color 0.175s ease;
         padding: 0.1rem 0.5rem;
 
         &:visited {
-          background: lighten(#142A54, 10%);
-          color: #efefef;
+          background: #F4EBDC;
+          color: #8A362B;
         }
 
         &:hover {
@@ -61,6 +61,12 @@
       }
     }
   }
+}
+
+.site-title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.25rem;
 }
 
 #bottombar {
@@ -131,6 +137,9 @@ p {
 }
 
 .into-it-grid {
+  width: calc(100% - 2rem);
+  margin: auto auto 4rem auto;
+
   display: grid;
   grid-gap: 2rem 1rem;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -235,3 +244,16 @@ p {
   }
 }
 
+// Basic wrappery stuff
+
+.basic_text_wrapper {
+  width: calc(100% - 4rem);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.basic_text_wrapper--slam-left {
+  width: calc(100% - 2rem);
+  max-width: 800px;
+  margin: 0 1rem;
+}
