@@ -150,6 +150,7 @@ p {
     color: #efefef;
 
     border-radius: 0.25rem 2rem 0.5rem 0.25rem;
+
     h3 {
       padding-bottom: 1.5rem;
       margin-bottom: 1.5rem;
@@ -205,12 +206,13 @@ p {
 // New home page
 
 .home__section {
-  padding: 4rem;
+  padding: 2rem 2rem;
 }
 
 .home__section--title {
   background: #F2EA7E;
-  color: #3E5902
+  color: #3E5902;
+  text-align: center;
 }
 
 .home__section--variant-1 {
@@ -225,11 +227,21 @@ p {
   --linkcontrast: #000;
 }
 
-.home__section--variant-1,
-.home__section--variant-2 {
+.home__section--variant-3 {
+  --primary: #14282E;
+  --secondary: #DBD1A0;
+  --linkcontrast: #000;
+}
+
+.home__section {
   background: var(--primary);
 
   a {
+    display: block;
+    width: calc(100% - 4rem);
+    text-align: center;
+    margin: auto;
+    max-width: 400px;
     padding: 2rem;
     background-color: var(--secondary);
     color: var(--primary);
@@ -237,7 +249,7 @@ p {
     text-decoration: none;
 
     &:hover {
-    transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+      transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
       background-color: var(--linkcontrast);
       color: var(--secondary);
     }
