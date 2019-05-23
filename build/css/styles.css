@@ -437,9 +437,14 @@ p {
   padding: 2rem 2rem; }
 
 .home__section--title {
-  background: #F2EA7E;
-  color: #3E5902;
+  --primary: #011233;
+  --secondary: #F57FAD;
   text-align: center; }
+  .home__section--title p {
+    font-size: 1.5rem;
+    font-style: italic; }
+  .home__section--title h1 {
+    font-weight: 700; }
 
 .home__section--variant-1 {
   --primary: #ABD904;
@@ -457,7 +462,8 @@ p {
   --linkcontrast: #000; }
 
 .home__section {
-  background: var(--primary); }
+  background: var(--primary);
+  color: var(--secondary); }
   .home__section a {
     display: block;
     width: calc(100% - 4rem);

@@ -210,9 +210,19 @@ p {
 }
 
 .home__section--title {
-  background: #F2EA7E;
-  color: #3E5902;
+  --primary: #011233;
+  --secondary: #F57FAD;
+
   text-align: center;
+
+  p {
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+
+  h1 {
+    font-weight: 700;
+  }
 }
 
 .home__section--variant-1 {
@@ -235,6 +245,7 @@ p {
 
 .home__section {
   background: var(--primary);
+  color: var(--secondary);
 
   a {
     display: block;
