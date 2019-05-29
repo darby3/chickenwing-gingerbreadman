@@ -10,7 +10,7 @@ app.partials('templates/partials/**/*.hbs');
 app.option('layout', 'main');
 
 app.task('default', function() {
-  app.pages('pages/*.hbs');
+  app.pages('pages/**/*.hbs');
   return app.toStream('pages')
     .pipe(app.renderFile())
     .pipe(extname())
