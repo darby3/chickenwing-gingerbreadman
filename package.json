@@ -37,7 +37,7 @@
   },
   "scripts": {
     "js": "browserify js/app.js -t babelify -o build/js/app.js",
-    "sass": "node-sass sass/main.scss build/css/styles.css",
+    "sass": "node-sass --output-style='compressed' sass/main.scss build/css/styles.css",
     "img": "cp -r images/ build/img/",
     "clean": "rm -r build/",
     "preview": "live-server --no-browser --open=build/ --watch=build/ --mount=/:build/ --ignore=**/*tmp-browserify*",
