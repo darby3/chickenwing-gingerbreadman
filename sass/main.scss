@@ -215,9 +215,9 @@ p {
     list-style: none;
     padding: 1rem 1rem 1.375rem;
     margin: 0;
-    border: 1px dotted #323232;
+    border: 1px dotted #083F02;
     background: #9BF029;
-    color: #4B2A39;
+    color: #083F02;
     font-size: 1.5rem;
     line-height: 1.125;
 
@@ -226,6 +226,33 @@ p {
     align-items: center;
     justify-content: center;
     text-align: center;
+
+    &.has-link {
+      padding: 0;
+
+      a {
+        padding: 1rem 1rem 1.375rem;
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        color: #9BF029;
+        background: #014177;
+        transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+        text-decoration: none;
+        width: calc(100% - 2rem);
+        height: 100%;
+
+        &:hover {
+          background: #0057A1;
+          color: #fff;
+          transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+      }
+    }
   }
 }
 
