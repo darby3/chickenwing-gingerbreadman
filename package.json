@@ -33,6 +33,15 @@
         "templates"
       ],
       "extensions": "hbs"
+    },
+    "articles": {
+      "patterns": [
+        "articles"
+      ],
+      "extensions": [
+        "md",
+        "hbs"
+      ]
     }
   },
   "scripts": {
@@ -42,6 +51,7 @@
     "clean": "rm -r build/",
     "preview": "live-server --no-browser --open=build/ --watch=build/ --mount=/:build/ --ignore=**/*tmp-browserify*",
     "build": "assemble",
+    "articles": "assemble content:articles",
     "watch": "npm-watch",
     "predev": "mkdir -p build && run-p sass js img build",
     "dev": "run-p preview watch"
@@ -51,12 +61,15 @@
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "assemble": "^0.24.3",
+    "assemble-permalinks": "^0.6.1",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babelify": "^10.0.0",
     "browserify": "^16.2.3",
     "gulp-extname": "^0.2.2",
+    "helper-markdown": "^1.0.0",
     "live-server": "^1.2.1",
+    "mixin-deep": "^2.0.0",
     "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
     "npm-watch": "^0.6.0"
