@@ -1,0 +1,78 @@
+// Some basic structural things
+
+#topbar {
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  border-bottom: 1px dotted #323232;
+
+  background: #8A362B;
+  color: #F4EBDC;
+  //border-radius: 1rem;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: normal;
+
+    li {
+      margin: 0 1rem;
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        background: #F4EBDC;
+        color: #8A362B;
+        transition: background 0.175s ease, color 0.175s ease;
+        padding: 0.1rem 0.5rem;
+
+        &:visited {
+          background: #F4EBDC;
+          color: #8A362B;
+        }
+
+        &:hover {
+          background: #142A54;
+          color: #efefef;
+        }
+      }
+    }
+  }
+}
+
+.site-title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+#bottombar {
+  padding: 4rem;
+  background: #142A54;
+  color: #ABD904;
+
+  a {
+    color: #ABD904;
+  }
+}
+
+// Basic wrappery stuff
+
+.basic_text_wrapper {
+  width: calc(100% - 4rem);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.basic_text_wrapper--slam-left {
+  width: calc(100% - 2rem);
+  max-width: 800px;
+  margin: 0 1rem 2rem;
+}
