@@ -50,9 +50,8 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "assemble": "^0.24.3",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
     "babelify": "^10.0.0",
     "browserify": "^16.2.3",
     "gulp-extname": "^0.2.2",
