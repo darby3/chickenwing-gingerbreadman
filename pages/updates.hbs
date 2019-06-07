@@ -1,0 +1,16 @@
+---
+title: site updates
+---
+
+{{> topbar }}
+
+<ul>
+{{#articles}}
+    {{#each (sortBy items "data.date") as |item|}}
+        {{log item.data.title}}
+        <li><a href="/{{item.data.permalink}}">{{item.data.title}}</a></li>
+    {{/each}}
+{{/articles}}
+</ul>
+
+{{> bottombar }}

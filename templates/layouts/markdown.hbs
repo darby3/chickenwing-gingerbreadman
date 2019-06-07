@@ -19,9 +19,26 @@
 
 {{#markdown}}
 {% body %}
+
+# Articles log
 {{/markdown}}
 
+<div>
 
+    {{log 'YYYYYY'}}
+
+{{#articles}}
+    <!-- log out items on the "pages" collection -->
+{{!--    {{log items}} --}}
+
+    {{#each (sortBy items "data.date") as |item|}}
+        {{log item.data.title}}
+    {{/each}}
+
+{{/articles}}
+</div>
+
+    {{!--
 All articles:
 <ul>
     {{#each articles}}
@@ -36,6 +53,7 @@ All articles:
             {{/each}}
         {{/each}}
     </ul>
+    --}}
 
 </div>
 

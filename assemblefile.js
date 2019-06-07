@@ -3,6 +3,7 @@
 var assemble = require('assemble');
 var extname = require("gulp-extname");
 var permalink = require('assemble-permalinks');
+var helpers = require('handlebars-helpers');
 var path = require('path');
 
 var app = assemble();
@@ -25,6 +26,8 @@ app.preRender( /./, function ( view, next ) {
 
 app.task( 'content:articles', function () {
   app.helper( 'markdown', require( 'helper-markdown' ) );
+  app.helper( 'log', helpers.logging() );
+  app.helper( 'log', helpers.array() );
   app.articles('articles/**/*.{md,hbs}');
 
   return app.toStream( 'articles' )
@@ -38,7 +41,7 @@ app.task( 'content:articles', function () {
     }) );
 } );
 
-app.task('default', function() {
+app.task('default', ['content:articles'], function() {
   app.pages('pages/**/*.hbs');
   return app.toStream('pages')
     .pipe(app.renderFile())

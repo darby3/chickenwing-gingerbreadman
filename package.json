@@ -67,6 +67,7 @@
     "babelify": "^10.0.0",
     "browserify": "^16.2.3",
     "gulp-extname": "^0.2.2",
+    "handlebars-helpers": "^0.10.0",
     "helper-markdown": "^1.0.0",
     "live-server": "^1.2.1",
     "mixin-deep": "^2.0.0",

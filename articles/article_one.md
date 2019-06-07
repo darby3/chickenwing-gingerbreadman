@@ -1,5 +1,6 @@
 ---
 title: How much fun are we having?
+date: 2019-06-02
 ---
 
 # This is my cool article
