@@ -41,7 +41,23 @@ app.task( 'content:articles', function () {
     }) );
 } );
 
-app.task('default', ['content:articles'], function() {
+app.task('updates', ['content:articles'], function() {
+  app.pages('listing/**/updates.hbs');
+  return app.toStream('pages')
+    .pipe(app.renderFile())
+    .pipe(extname())
+    .pipe(app.dest('build'));
+});
+
+app.task('rebuild', ['updates'], function() {
+  app.pages('pages/**/*.hbs');
+  return app.toStream('pages')
+    .pipe(app.renderFile())
+    .pipe(extname())
+    .pipe(app.dest('build'));
+});
+
+app.task('default', function() {
   app.pages('pages/**/*.hbs');
   return app.toStream('pages')
     .pipe(app.renderFile())

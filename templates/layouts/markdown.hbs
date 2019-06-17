@@ -15,13 +15,20 @@
 </head>
 <body>
 
-<div class="article">
+<article class="article">
 
+<div class="article__header">
+<h1>{{ title }}</h1>
+<p> {{ date }} </p>
+</div>
+
+<div class="content">
 {{#markdown}}
 {% body %}
-
-# Articles log
 {{/markdown}}
+</div>
+
+</article>
 
 <div>
 
