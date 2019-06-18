@@ -1,14 +1,14 @@
 ---
 title: How much fun are we having?
-date: 2019-06-02
+posted: 2019-06-24 11:00:00
+daysadd:
+  days: 5
 ---
 
-# This is my cool article
+## This is my cool article
 
 This is the content of my cool article
 
-## This is my subjead
+La la la, la la la la la
 
-## Please render me to HTML
-
-> bling
+La la la

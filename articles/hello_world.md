@@ -1,6 +1,8 @@
 ---
 title: Hello World
-date: 2019-06-17
+posted: 2019-06-14 12:00:00
+daysadd:
+  days: 5
 ---
 
 This is my first attempt at posting a simple site update.

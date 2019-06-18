@@ -17,9 +17,11 @@
 
 <article class="article">
 
+    {{ log posted }}
+
 <div class="article__header">
 <h1>{{ title }}</h1>
-<p> {{ date }} </p>
+<p> {{ moment posted format="DD MMMM YYYY, HH:mm:ss (ZZ)" }} </p>
 </div>
 
 <div class="content">
@@ -30,20 +32,24 @@
 
 </article>
 
+{{!--
+
 <div>
 
-    {{log 'YYYYYY'}}
+{{log 'YYYYYY'}}
 
 {{#articles}}
     <!-- log out items on the "pages" collection -->
-{{!--    {{log items}} --}}
+    {{log items}}
 
-    {{#each (sortBy items "data.date") as |item|}}
+    {{#each (sortBy items "data.posted") as |item|}}
         {{log item.data.title}}
     {{/each}}
 
 {{/articles}}
 </div>
+
+--}}
 
     {{!--
 All articles:
