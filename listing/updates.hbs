@@ -4,13 +4,16 @@ title: Site updates
 
 {{> topbar }}
 
-<ul>
-{{#articles}}
-    {{#each (sortBy items "data.date") as |item|}}
-        {{log item.data.title}}
-        <li><a href="/{{item.data.permalink}}">{{item.data.title}}</a></li>
-    {{/each}}
-{{/articles}}
-</ul>
+<div class="basic_text_wrapper">
+    <h1>Updates</h1>
+
+    <ul class="simple-bullet-list">
+        {{#updates}}
+            {{#each (sortBy items "data.posted") as |item|}}
+                <li>{{ moment item.data.posted format="YYYY-MM-DD" }}: <a href="/{{item.data.permalink}}">{{item.data.title}}</a></li>
+            {{/each}}
+        {{/updates}}
+    </ul>
+</div>
 
 {{> bottombar }}

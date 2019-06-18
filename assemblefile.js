@@ -1,11 +1,9 @@
 'use strict';
 
 var assemble = require('assemble');
-var extname = require("gulp-extname");
+var extname = require('gulp-extname');
 var permalink = require('assemble-permalinks');
-// var handlebars = require('handlebars');
 var helpers = require('handlebars-helpers');
-// var moment = require('helper-moment');
 var path = require('path');
 
 var app = assemble();
@@ -15,26 +13,27 @@ app.partials('templates/partials/**/*.hbs');
 
 app.option('layout', 'main');
 
-app.create('articles');
+app.create('updates');
+app.updates.option('layout', 'update');
 
-app.articles.option('layout', 'markdown');
 app.use(permalink());
 
 app.preRender( /./, function ( view, next ) {
-  view.data.articles = app.views.articles;
+  view.data.updates = app.views.updates;
 
   next();
 } );
 
-app.task( 'content:articles', function () {
+app.task( 'content:updates', function () {
+  app.helper( 'date', helpers.date() );
+
   app.helper( 'markdown', require( 'helper-markdown' ) );
   app.helper( 'log', helpers.logging() );
   app.helper( 'array', helpers.array() );
-  app.helper( 'date', helpers.date() );
-  app.articles('articles/**/*.{md,hbs}');
+  app.updates('updates/**/*.{md,hbs}');
 
-  return app.toStream( 'articles' )
-    .pipe( app.permalink('articles/:name/index.html') )
+  return app.toStream( 'updates' )
+    .pipe( app.permalink('updates/:name/index.html') )
     .pipe( app.renderFile() )
     .pipe( extname() )
     .pipe( app.dest(function(file) {
@@ -44,7 +43,9 @@ app.task( 'content:articles', function () {
     }) );
 } );
 
-app.task('updates', ['content:articles'], function() {
+app.task( 'listing:updates', ['content:updates'], function() {
+  app.helper( 'date', helpers.date() );
+
   app.pages('listing/**/updates.hbs');
   return app.toStream('pages')
     .pipe(app.renderFile())
@@ -52,7 +53,7 @@ app.task('updates', ['content:articles'], function() {
     .pipe(app.dest('build'));
 });
 
-app.task('rebuild', ['updates'], function() {
+app.task('rebuild:all', ['listing:updates'], function() {
   app.pages('pages/**/*.hbs');
   return app.toStream('pages')
     .pipe(app.renderFile())

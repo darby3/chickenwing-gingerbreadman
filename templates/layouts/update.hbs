@@ -15,9 +15,10 @@
 </head>
 <body>
 
-<article class="article">
+{{> topbar }}
+{{> updatesbar }}
 
-    {{ log posted }}
+<article class="article">
 
 <div class="article__header">
 <h1>{{ title }}</h1>
@@ -32,43 +33,7 @@
 
 </article>
 
-{{!--
-
-<div>
-
-{{log 'YYYYYY'}}
-
-{{#articles}}
-    <!-- log out items on the "pages" collection -->
-    {{log items}}
-
-    {{#each (sortBy items "data.posted") as |item|}}
-        {{log item.data.title}}
-    {{/each}}
-
-{{/articles}}
-</div>
-
---}}
-
-    {{!--
-All articles:
-<ul>
-    {{#each articles}}
-        <li>{{data.title}} -- {{data.dest}}</li>
-    {{/each}}
-</ul>
-
-    <ul>
-        {{#each articles}}
-            {{#each data}}
-                <li>{{data}}</li>
-            {{/each}}
-        {{/each}}
-    </ul>
-    --}}
-
-</div>
+{{> bottombar }}
 
 </body>
 </html>
