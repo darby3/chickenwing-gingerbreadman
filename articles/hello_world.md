@@ -1,8 +1,8 @@
 ---
 title: Hello World
-posted: 2019-06-14 12:00:00
+posted: 2019-06-14
 daysadd:
-  days: 5
+  hours: 4
 ---
 
 This is my first attempt at posting a simple site update.

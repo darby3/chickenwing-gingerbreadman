@@ -3,8 +3,9 @@
 var assemble = require('assemble');
 var extname = require("gulp-extname");
 var permalink = require('assemble-permalinks');
+// var handlebars = require('handlebars');
 var helpers = require('handlebars-helpers');
-var moment = require('helper-moment');
+// var moment = require('helper-moment');
 var path = require('path');
 
 var app = assemble();
