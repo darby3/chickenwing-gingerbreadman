@@ -9,8 +9,8 @@ title: Site updates
 
     <ul class="simple-bullet-list">
         {{#updates}}
-            {{#each (sortBy items "data.posted") as |item|}}
-                <li>{{ moment item.data.posted format="YYYY-MM-DD" }}: <a href="/{{item.data.permalink}}">{{item.data.title}}</a></li>
+            {{#each (reverse (sortBy items "data.created")) as |item|}}
+                <li>{{ moment item.data.created format="YYYY-MM-DD" }}: <a href="/{{item.data.permalink}}">{{item.data.title}}</a></li>
             {{/each}}
         {{/updates}}
     </ul>

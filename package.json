@@ -39,9 +39,9 @@
       ],
       "extensions": "hbs"
     },
-    "articles": {
+    "updates": {
       "patterns": [
-        "articles"
+        "updates"
       ],
       "extensions": [
         "md",
@@ -57,7 +57,7 @@
     "preview": "live-server --no-browser --open=build/ --watch=build/ --mount=/:build/ --ignore=**/*tmp-browserify*",
     "build": "assemble",
     "rebuild": "assemble rebuild:all",
-    "articles": "assemble listing:updates",
+    "updates": "assemble listing:updates",
     "watch": "npm-watch",
     "predev": "mkdir -p build && run-p sass js img build",
     "dev": "run-p preview watch"
