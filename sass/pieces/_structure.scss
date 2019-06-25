@@ -89,3 +89,9 @@
   max-width: 800px;
   margin: 0 1rem 2rem;
 }
+
+.article {
+  width: calc(100% - 4rem);
+  max-width: 695px;
+  margin: 0 auto 8rem;
+}
