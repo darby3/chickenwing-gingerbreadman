@@ -1,7 +1,7 @@
 // Some basic structural things
 
 #topbar {
-  margin-bottom: 2rem;
+  margin: 0;
   padding: 0.5rem 0;
   //padding: 1rem;
   border-bottom: 1px dotted #323232;
@@ -73,6 +73,47 @@
 
   a {
     color: #ABD904;
+  }
+}
+
+// Updates bar
+.updatesBar {
+  --foreground: #F4FE6C;
+  --background: #3B3F5D;
+
+  margin: 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px dotted #323232;
+
+  background: var(--background);
+  color: var(--foreground);
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  > * {
+    margin: 0.5rem 1rem 0.5rem 1rem;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    background: #F4EBDC;
+    color: #8A362B;
+    transition: background 0.175s ease, color 0.175s ease;
+    padding: 0.185rem 0.5rem;
+
+    &:visited {
+      background: #F4EBDC;
+      color: #8A362B;
+    }
+
+    &:hover {
+      background: #142A54;
+      color: #efefef;
+    }
   }
 }
 
