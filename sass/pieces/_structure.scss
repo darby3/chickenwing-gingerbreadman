@@ -1,37 +1,48 @@
 // Some basic structural things
 
 #topbar {
-  margin-bottom: 2rem;
-  padding: 0 1rem;
+  margin: 0;
+  padding: 0.5rem 0;
+  //padding: 1rem;
   border-bottom: 1px dotted #323232;
 
-  background: #8A362B;
-  color: #F4EBDC;
+  background: #191B2E;
+  color: #14C9E1;
   //border-radius: 1rem;
 
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
 
+  nav {
+    margin: 0.5rem 1rem 0.5rem 1rem;
+  }
+
   ul {
-    margin: 0;
     padding: 0;
+    margin: 0;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: normal;
 
     li {
-      margin: 0 1rem;
+      display: block;
+      margin: 0 1rem 0 0;
+      &:last-child {
+        margin: 0;
+      }
+
       list-style: none;
 
       a {
+        display: block;
         text-decoration: none;
         background: #F4EBDC;
         color: #8A362B;
         transition: background 0.175s ease, color 0.175s ease;
-        padding: 0.1rem 0.5rem;
+        padding: 0.185rem 0.5rem;
 
         &:visited {
           background: #F4EBDC;
@@ -51,6 +62,8 @@
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.25rem;
+  line-height: 1;
+  margin: 0.5rem 1rem 0.5rem 1rem;
 }
 
 #bottombar {
@@ -60,6 +73,47 @@
 
   a {
     color: #ABD904;
+  }
+}
+
+// Updates bar
+.updatesBar {
+  --foreground: #F4FE6C;
+  --background: #3B3F5D;
+
+  margin: 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px dotted #323232;
+
+  background: var(--background);
+  color: var(--foreground);
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  > * {
+    margin: 0.5rem 1rem 0.5rem 1rem;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    background: #F4EBDC;
+    color: #8A362B;
+    transition: background 0.175s ease, color 0.175s ease;
+    padding: 0.185rem 0.5rem;
+
+    &:visited {
+      background: #F4EBDC;
+      color: #8A362B;
+    }
+
+    &:hover {
+      background: #142A54;
+      color: #efefef;
+    }
   }
 }
 
@@ -75,4 +129,10 @@
   width: calc(100% - 2rem);
   max-width: 800px;
   margin: 0 1rem 2rem;
+}
+
+.article {
+  width: calc(100% - 4rem);
+  max-width: 695px;
+  margin: 0 auto 8rem;
 }
