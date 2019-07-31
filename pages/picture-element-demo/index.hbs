@@ -1,0 +1,299 @@
+---
+title: Home
+layout: picture-element-demo
+---
+
+{{> topbar }}
+
+<section class="basic_text_wrapper--picture-demo-header">
+    <div class="basic_text_wrapper--picture-demo-header--text">
+        <h1>Picture Element Demo</h1>
+        <p>Stepping through ideas for the implementation of a picture element. Inspired by <a href="https://alistapart.com/article/responsive-images-in-practice/">this A List Apart post</a> and my own later (but now also old) <a href="https://namingthingsishard.blog/node/69">follow-up blog post</a>. In the course of working on this, <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">this MDN page</a> came in very handy as a clarifying agent.</p>
+    </div>
+</section>
+
+{{!-- Step 1 --}}
+
+<section class="basic_text_wrapper--picture-demo">
+    <h2>Start with something simple but fairly useful</h2>
+    <p>We have some text with a max-width on it; we have an figure/image combo that starts off as a centered block element. Then we float it into the text when there's enough space to support it. Fairly basic responsive effect.</p>
+</section>
+
+<section class="picture_element_demo">
+    <div class="picture_element_demo__text-column">
+        <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.</p>
+
+        <figure class="picture_element_demo__image--float-right">
+            <img class=""
+                 src="https://via.placeholder.com/300x300"
+                 alt="">
+            <figcaption>Our cool responsive image that sometimes floats.</figcaption>
+        </figure>
+
+        <p>Similique est iste incidunt labore sit. Sit reprehenderit qui qui consectetur deserunt autem. Rerum in eum consequatur placeat reiciendis. Deleniti laboriosam rem aut voluptas omnis repellat dolor inventore. Sed quaerat consequatur consequatur quas illo vel.p Ut ex voluptates non architecto.</p>
+
+        <p>Omnis pariatur explicabo aut odit. Eos ea a praesentium culpa nihil doloremque voluptas. Nobis sint autem suscipit vel temporibus maxime. Temporibus sunt officiis eius. Labore odio dolores debitis repellat nihil. Molestias voluptatem qui cupiditate itaque quiap rem id.</p>
+
+        <p>Non praesentium aspernatur voluptas ut. Cumque voluptatum eveniet repellat ullam saepe sed sit. Ipsa magni labore expedita ab et voluptatem officiis. Ad deleniti quo natus voluptatem. Quam error nulla ut sed ducimus nihil iure perspiciatis. Necessitatibusp itaque fuga nihil alias distinctio beatae perferendis.</p>
+
+        <p>Doloribus officia repudiandae corporis odit aut. Ut adipisci vero ea facilis ipsam et ut. Odio voluptas quia voluptate ea consequatur voluptatem commodi. Non omnis eum numquam distinctio commodi illo.</p>
+    </div>
+</section>
+
+
+
+{{!-- Step 2 --}}
+
+<section class="basic_text_wrapper--picture-demo">
+    <h2>Now add srcset and sizes to the img element</h2>
+    <p>What we want to do is get some idea of what the browsers loads and if in fact various versions of the image are in fact loaded. Also we want to make sure that what we've done so far actually works in this context.</p>
+    <p>This is something you kind of have to mess around with to get an idea of what's happening. As the List Apart article mentions, it's also not something we want to be too picky about at this point. We're mostly interested in helping the browser understand what version of the image it should go get based on the factors its aware of that we either aren't (bandwidth, supposedly) or shouldn't care about (screen size).</p>
+    <p>Also worth noting, as noted in the List Apart article re: ems in the sizes calc statement: rem, too, seems to fall back to a browser-standard 16 px, so I wasn't quite seeing the results I was expecting, when I originally plugged in <code>(100vw - 4rem)</code>. So I had to scale up my 4rem to match the 20px rem I set in the stylesheet (20px = 16px * 1.25; 4rem * 1.25 = 5rem).</p>
+    <p>This stage, ultimately, is about asset management, nothing more. We're not into art direction yet.</p>
+</section>
+
+<section class="picture_element_demo">
+    <div class="picture_element_demo__text-column">
+        <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.</p>
+
+        <figure class="picture_element_demo__image--float-right">
+            <img class=""
+                 srcset="https://via.placeholder.com/900x900?text=Not+Even+Real+(900x900) 900w,
+                         https://via.placeholder.com/600x600?text=Giant+(600x600) 600w,
+                         https://via.placeholder.com/450x450?text=Middle+(450x450) 450w,
+                         https://via.placeholder.com/300x300?text=Small+(300x300) 300w,
+                         https://via.placeholder.com/150x150?text=Tiny+Tiny+(150x150) 150w"
+                 sizes="(max-width: 380px) calc(100vw - 5rem),
+                         300px"
+                 src="https://via.placeholder.com/300x300"
+                 alt="">
+            <figcaption>Our cool responsive image that sometimes floats and which now includes srcset and sizes attributes, to help the browser download the most sensible version of the image it can.</figcaption>
+        </figure>
+
+        <p>Similique est iste incidunt labore sit. Sit reprehenderit qui qui consectetur deserunt autem. Rerum in eum consequatur placeat reiciendis. Deleniti laboriosam rem aut voluptas omnis repellat dolor inventore. Sed quaerat consequatur consequatur quas illo vel.p Ut ex voluptates non architecto.</p>
+
+        <p>Omnis pariatur explicabo aut odit. Eos ea a praesentium culpa nihil doloremque voluptas. Nobis sint autem suscipit vel temporibus maxime. Temporibus sunt officiis eius. Labore odio dolores debitis repellat nihil. Molestias voluptatem qui cupiditate itaque quiap rem id.</p>
+
+        <p>Non praesentium aspernatur voluptas ut. Cumque voluptatum eveniet repellat ullam saepe sed sit. Ipsa magni labore expedita ab et voluptatem officiis. Ad deleniti quo natus voluptatem. Quam error nulla ut sed ducimus nihil iure perspiciatis. Necessitatibusp itaque fuga nihil alias distinctio beatae perferendis.</p>
+
+        <p>Doloribus officia repudiandae corporis odit aut. Ut adipisci vero ea facilis ipsam et ut. Odio voluptas quia voluptate ea consequatur voluptatem commodi. Non omnis eum numquam distinctio commodi illo.</p>
+    </div>
+</section>
+
+
+
+{{!-- Step 3 --}}
+
+<section class="basic_text_wrapper--picture-demo">
+    <h2>Changing it up with art direction</h2>
+    <p>In this case, we (at least for now) dump the srcset stuff in favor of actually changing the image based on screen conditions we're interested in responding to.</p>
+    <p>In this example we're changing as little as possible: we're keeping a square image, but we'd change the crop of the image. When the image is floated, in this case, we'd have more "surrounding context" in the image. When the image is centered, we'd crop in a bit more tight, onto a specific detail of the image.</p>
+    <p>To me this actually feels even more straight-forward than the srcset stuff above. I'm being very explicit about what I'm telling the browser to do: if this condition is true, show this image, if this next condition is true, show this other image.</p>
+</section>
+
+<section class="picture_element_demo">
+    <div class="picture_element_demo__text-column">
+        <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.</p>
+
+        <figure class="picture_element_demo__image--float-right">
+            <picture>
+                <source media="(max-width: 761px)"
+                        srcset="https://via.placeholder.com/300x300?text=Detail+Shot">
+                <source media="(min-width: 762px)"
+                        srcset="https://via.placeholder.com/300x300?text=Context-heavy">
+                <img class=""
+                     src="https://via.placeholder.com/300x300"
+                     alt="">
+            </picture>
+
+            <figcaption>Our cool responsive image that sometimes floats and which now uses a picture wrapper with source elements that dictates actual different images that should be used in specific screen-width scenarios.</figcaption>
+        </figure>
+
+        <p>Similique est iste incidunt labore sit. Sit reprehenderit qui qui consectetur deserunt autem. Rerum in eum consequatur placeat reiciendis. Deleniti laboriosam rem aut voluptas omnis repellat dolor inventore. Sed quaerat consequatur consequatur quas illo vel.p Ut ex voluptates non architecto.</p>
+
+        <p>Omnis pariatur explicabo aut odit. Eos ea a praesentium culpa nihil doloremque voluptas. Nobis sint autem suscipit vel temporibus maxime. Temporibus sunt officiis eius. Labore odio dolores debitis repellat nihil. Molestias voluptatem qui cupiditate itaque quiap rem id.</p>
+
+        <p>Non praesentium aspernatur voluptas ut. Cumque voluptatum eveniet repellat ullam saepe sed sit. Ipsa magni labore expedita ab et voluptatem officiis. Ad deleniti quo natus voluptatem. Quam error nulla ut sed ducimus nihil iure perspiciatis. Necessitatibusp itaque fuga nihil alias distinctio beatae perferendis.</p>
+
+        <p>Doloribus officia repudiandae corporis odit aut. Ut adipisci vero ea facilis ipsam et ut. Odio voluptas quia voluptate ea consequatur voluptatem commodi. Non omnis eum numquam distinctio commodi illo.</p>
+    </div>
+</section>
+
+
+
+{{!-- Step 4 --}}
+
+<section class="basic_text_wrapper--picture-demo">
+    <h2>But like actually seriously change it up with art direction, for realsies</h2>
+    <p>That's a bare-bones example. What we really want to do with something like this is more like...</p>
+    <ul>
+        <li>Start with a full-width detail-focused image for smaller screen widths; maybe it's a square so it looks nice when in a portrait-orientation situation.</li>
+        <li>Expand the image out a bit, say to a 4:3 ratio, to let in a little more context as the width of the screen expands to allow for it; but we're shortening it up a bit, vertically, so it's not overwhelmingly higher than whatever the screen height is likely to be.</li>
+        <li>Flip the whole thing into a custom-cropped portrait-orientation photo that floats into the text when there's room for it to do so.</li>
+    </ul>
+    <p>Can we build it? Yes we can:</p>
+</section>
+
+<section class="picture_element_demo">
+    <div class="picture_element_demo__text-column">
+        <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.</p>
+
+        <figure class="picture_element_demo__image--dramatic">
+            <picture>
+                <source media="(max-width: 520px)"
+                        srcset="https://via.placeholder.com/300x300?text=1:1+Detail+Shot">
+                <source media="(max-width: 761px)"
+                        srcset="https://via.placeholder.com/400x300?text=4:3+Landscape+With+Context">
+                <source media="(min-width: 762px)"
+                        srcset="https://via.placeholder.com/300x533?text=16:9+Weird+Portrait+Crop">
+                <img class=""
+                     src="https://via.placeholder.com/300x300"
+                     alt="">
+            </picture>
+
+            <figcaption>Our cool responsive image that sometimes floats and which now uses a picture wrapper with source elements that dictates actual different images that should be used in specific screen-width scenarios.</figcaption>
+        </figure>
+
+        <p>Similique est iste incidunt labore sit. Sit reprehenderit qui qui consectetur deserunt autem. Rerum in eum consequatur placeat reiciendis. Deleniti laboriosam rem aut voluptas omnis repellat dolor inventore. Sed quaerat consequatur consequatur quas illo vel.p Ut ex voluptates non architecto.</p>
+
+        <p>Omnis pariatur explicabo aut odit. Eos ea a praesentium culpa nihil doloremque voluptas. Nobis sint autem suscipit vel temporibus maxime. Temporibus sunt officiis eius. Labore odio dolores debitis repellat nihil. Molestias voluptatem qui cupiditate itaque quiap rem id.</p>
+
+        <p>Non praesentium aspernatur voluptas ut. Cumque voluptatum eveniet repellat ullam saepe sed sit. Ipsa magni labore expedita ab et voluptatem officiis. Ad deleniti quo natus voluptatem. Quam error nulla ut sed ducimus nihil iure perspiciatis. Necessitatibusp itaque fuga nihil alias distinctio beatae perferendis.</p>
+
+        <p>Doloribus officia repudiandae corporis odit aut. Ut adipisci vero ea facilis ipsam et ut. Odio voluptas quia voluptate ea consequatur voluptatem commodi. Non omnis eum numquam distinctio commodi illo.</p>
+    </div>
+</section>
+
+
+
+
+{{!--
+
+
+<section class="basic_text_wrapper--picture-demo">
+    <h2>Start with some plain old image files</h2>
+    <p>Throwing some basic img elements in place. Adding a small variety of aspect ratios, because I know that's something I want to play with.</p>
+</section>
+
+<section class="picture_element_demo">
+    <div>
+        <img src="https://via.placeholder.com/150x150" alt="">
+    </div>
+    <div>
+        <img src="https://via.placeholder.com/480x360" alt="">
+    </div>
+    <div>
+        <img src="https://via.placeholder.com/360x480" alt="">
+    </div>
+    <div>
+        <img src="https://via.placeholder.com/1024x576" alt="">
+    </div>
+</section>
+
+<section class="basic_text_wrapper--picture-demo">
+    <h2>Put them in some context</h2>
+    <p>Lets put these images into some context: floating into text and punctuating text in different ways.</p>
+</section>
+
+<section class="picture_element_demo">
+
+    <div class="text">
+        <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.</p>
+
+        <img class="picture-element-demo--float-right" src="https://via.placeholder.com/150x150" alt="">
+
+        <p>Similique est iste incidunt labore sit. Sit reprehenderit qui qui consectetur deserunt autem. Rerum in eum consequatur placeat reiciendis. Deleniti laboriosam rem aut voluptas omnis repellat dolor inventore. Sed quaerat consequatur consequatur quas illo vel.p Ut ex voluptates non architecto.</p>
+
+        <p>Omnis pariatur explicabo aut odit. Eos ea a praesentium culpa nihil doloremque voluptas. Nobis sint autem suscipit vel temporibus maxime. Temporibus sunt officiis eius. Labore odio dolores debitis repellat nihil. Molestias voluptatem qui cupiditate itaque quiap rem id.</p>
+
+        <p>Sunt vel dicta deserunt corrupti accusamus omnis voluptates rerum. Ratione aut quibusdam laboriosam laborum ut. Dolor consequatur quam velit doloremque.</p>
+
+        <img class="picture-element-demo--float-left" src="https://via.placeholder.com/480x360" alt="">
+
+        <p>Unde et nesciunt ex optio sapiente animi. Voluptas laboriosam non eos. Velit sapiente natus ratione esse. Cum ut id dolorem quia explicabo. Repudiandae deserunt eos nihil saepe atque exercitationem consectetur fugit.</p>
+
+        <p>Dignissimos molestias doloremque earum eum accusamus accusamus qui. Incidunt aut doloribus nihil rem sed vero consequuntur at. Voluptatum officia cupiditate et sit tenetur ut. Consequatur dolorum et illum soluta illo quas corrupti. Facilis voluptas qui aut utp cumque. Ea soluta laborum incidunt quaerat similique molestias laborum sit.</p>
+
+        <img src="https://via.placeholder.com/360x480" alt="">
+
+        <p>Non praesentium aspernatur voluptas ut. Cumque voluptatum eveniet repellat ullam saepe sed sit. Ipsa magni labore expedita ab et voluptatem officiis. Ad deleniti quo natus voluptatem. Quam error nulla ut sed ducimus nihil iure perspiciatis. Necessitatibusp itaque fuga nihil alias distinctio beatae perferendis.</p>
+
+        <p>Doloribus officia repudiandae corporis odit aut. Ut adipisci vero ea facilis ipsam et ut. Odio voluptas quia voluptate ea consequatur voluptatem commodi. Non omnis eum numquam distinctio commodi illo.</p>
+    </div>
+
+    <div class="full-width">
+        <img src="https://via.placeholder.com/1024x576" alt="">
+    </div>
+
+    <div class="text">
+
+        <p>Et mollitia aut sit natus dignissimos est quia. Fugiat id architecto molestiae et voluptate. Quaerat veniam assumenda laborum est sequi rerum ea voluptas. Error et exercitationem nulla ipsam aspernatur in quis. Vero eaque quibusdam commodi autem est. Debitisp fugiat quas nihil labore placeat vel.</p>
+
+        <p>Molestiae est autem laborum non. Delectus rerum saepe laudantium repellat ullam. Voluptas sit qui eius voluptate. Sit ducimus iste laudantium labore sed veritatis. Sed maxime qui beatae tempora excepturi eaque perspiciatis cupiditate.</p>
+    </div>
+</section>
+
+
+<section class="basic_text_wrapper--picture-demo">
+    <h2>Add srcsets for scaling purposes</h2>
+    <p>Lets just add some different srcset and sizes so we can see what happens at different browser width / screen density combos. We're also going to wrap a few images so they have max-widths, perhaps? I'm trying to change as little as possible at this point; I'm not making images as "responsive" to my interests/needs as I'm interested in doing, quite yet.</p>
+</section>
+
+<section class="picture_element_demo">
+
+    <div class="text">
+        <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.</p>
+
+        <div class="picture-element-demo--max-150">
+            <img class="picture-element-demo--float-right"
+                 srcset="https://via.placeholder.com/1200x1200?Text=Not+Even+Real  1200w,
+                         https://via.placeholder.com/600x600?Text=Giant  600w,
+                         https://via.placeholder.com/450x450?Text=Middle   450w,
+                         https://via.placeholder.com/150x150?Text=Small   150w"
+                 sizes="150px"
+                 src="https://via.placeholder.com/150x150"
+                 alt="">
+        </div>
+
+        <p>Similique est iste incidunt labore sit. Sit reprehenderit qui qui consectetur deserunt autem. Rerum in eum consequatur placeat reiciendis. Deleniti laboriosam rem aut voluptas omnis repellat dolor inventore. Sed quaerat consequatur consequatur quas illo vel.p Ut ex voluptates non architecto.</p>
+
+        <p>Omnis pariatur explicabo aut odit. Eos ea a praesentium culpa nihil doloremque voluptas. Nobis sint autem suscipit vel temporibus maxime. Temporibus sunt officiis eius. Labore odio dolores debitis repellat nihil. Molestias voluptatem qui cupiditate itaque quiap rem id.</p>
+
+        <p>Sunt vel dicta deserunt corrupti accusamus omnis voluptates rerum. Ratione aut quibusdam laboriosam laborum ut. Dolor consequatur quam velit doloremque.</p>
+
+        <img class="picture-element-demo--float-left picture-element-demo--float-left--max-480"
+             srcset="https://via.placeholder.com/1200x1200?Text=Not+Even+Real  1200w,
+                         https://via.placeholder.com/600x600?Text=Giant  600w,
+                         https://via.placeholder.com/450x450?Text=Middle   450w,
+                         https://via.placeholder.com/150x150?Text=Small   150w"
+             sizes="150px"
+
+             src="https://via.placeholder.com/480x360"
+             alt="">
+
+        <p>Unde et nesciunt ex optio sapiente animi. Voluptas laboriosam non eos. Velit sapiente natus ratione esse. Cum ut id dolorem quia explicabo. Repudiandae deserunt eos nihil saepe atque exercitationem consectetur fugit.</p>
+
+        <p>Dignissimos molestias doloremque earum eum accusamus accusamus qui. Incidunt aut doloribus nihil rem sed vero consequuntur at. Voluptatum officia cupiditate et sit tenetur ut. Consequatur dolorum et illum soluta illo quas corrupti. Facilis voluptas qui aut utp cumque. Ea soluta laborum incidunt quaerat similique molestias laborum sit.</p>
+
+        <img src="https://via.placeholder.com/360x480" alt="">
+
+        <p>Non praesentium aspernatur voluptas ut. Cumque voluptatum eveniet repellat ullam saepe sed sit. Ipsa magni labore expedita ab et voluptatem officiis. Ad deleniti quo natus voluptatem. Quam error nulla ut sed ducimus nihil iure perspiciatis. Necessitatibusp itaque fuga nihil alias distinctio beatae perferendis.</p>
+
+        <p>Doloribus officia repudiandae corporis odit aut. Ut adipisci vero ea facilis ipsam et ut. Odio voluptas quia voluptate ea consequatur voluptatem commodi. Non omnis eum numquam distinctio commodi illo.</p>
+    </div>
+
+    <div class="full-width">
+        <img src="https://via.placeholder.com/1024x576" alt="">
+    </div>
+
+    <div class="text">
+
+        <p>Et mollitia aut sit natus dignissimos est quia. Fugiat id architecto molestiae et voluptate. Quaerat veniam assumenda laborum est sequi rerum ea voluptas. Error et exercitationem nulla ipsam aspernatur in quis. Vero eaque quibusdam commodi autem est. Debitisp fugiat quas nihil labore placeat vel.</p>
+
+        <p>Molestiae est autem laborum non. Delectus rerum saepe laudantium repellat ullam. Voluptas sit qui eius voluptate. Sit ducimus iste laudantium labore sed veritatis. Sed maxime qui beatae tempora excepturi eaque perspiciatis cupiditate.</p>
+    </div>
+</section>
+--}}
+
+
+{{> bottombar }}
