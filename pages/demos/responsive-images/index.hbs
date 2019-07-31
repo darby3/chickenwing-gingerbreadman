@@ -1,14 +1,14 @@
 ---
-title: Home
-layout: picture-element-demo
+title: Demo - Responsive Images
+layout: responsive-images-demo
 ---
 
 {{> topbar }}
 
 <section class="basic_text_wrapper--picture-demo-header">
     <div class="basic_text_wrapper--picture-demo-header--text">
-        <h1>Picture Element Demo</h1>
-        <p>Stepping through ideas for the implementation of a picture element. Inspired by <a href="https://alistapart.com/article/responsive-images-in-practice/">this A List Apart post</a> and my own later (but now also old) <a href="https://namingthingsishard.blog/node/69">follow-up blog post</a>. In the course of working on this, <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">this MDN page</a> came in very handy as a clarifying agent.</p>
+        <h1>Demo: Responsive Images</h1>
+        <p>Stepping through ideas for the implementation of a picture element. Inspired by <a href="https://alistapart.com/article/responsive-images-in-practice/">this A List Apart post</a> and my own later (but now also old) <a href="https://namingthingsishard.blog/node/69">follow-up blog post</a>. In the course of working on this, <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">this MDN page</a> came in handy as a clarifying agent.</p>
     </div>
 </section>
 
@@ -224,137 +224,5 @@ layout: picture-element-demo
 
     </div>
 </section>
-
-
-
-
-{{!--
-
-
-<section class="basic_text_wrapper--picture-demo">
-    <h2>Start with some plain old image files</h2>
-    <p>Throwing some basic img elements in place. Adding a small variety of aspect ratios, because I know that's something I want to play with.</p>
-</section>
-
-<section class="picture_element_demo">
-    <div>
-        <img src="https://via.placeholder.com/150x150" alt="">
-    </div>
-    <div>
-        <img src="https://via.placeholder.com/480x360" alt="">
-    </div>
-    <div>
-        <img src="https://via.placeholder.com/360x480" alt="">
-    </div>
-    <div>
-        <img src="https://via.placeholder.com/1024x576" alt="">
-    </div>
-</section>
-
-<section class="basic_text_wrapper--picture-demo">
-    <h2>Put them in some context</h2>
-    <p>Lets put these images into some context: floating into text and punctuating text in different ways.</p>
-</section>
-
-<section class="picture_element_demo">
-
-    <div class="text">
-        <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.</p>
-
-        <img class="picture-element-demo--float-right" src="https://via.placeholder.com/150x150" alt="">
-
-        <p>Similique est iste incidunt labore sit. Sit reprehenderit qui qui consectetur deserunt autem. Rerum in eum consequatur placeat reiciendis. Deleniti laboriosam rem aut voluptas omnis repellat dolor inventore. Sed quaerat consequatur consequatur quas illo vel.p Ut ex voluptates non architecto.</p>
-
-        <p>Omnis pariatur explicabo aut odit. Eos ea a praesentium culpa nihil doloremque voluptas. Nobis sint autem suscipit vel temporibus maxime. Temporibus sunt officiis eius. Labore odio dolores debitis repellat nihil. Molestias voluptatem qui cupiditate itaque quiap rem id.</p>
-
-        <p>Sunt vel dicta deserunt corrupti accusamus omnis voluptates rerum. Ratione aut quibusdam laboriosam laborum ut. Dolor consequatur quam velit doloremque.</p>
-
-        <img class="picture-element-demo--float-left" src="https://via.placeholder.com/480x360" alt="">
-
-        <p>Unde et nesciunt ex optio sapiente animi. Voluptas laboriosam non eos. Velit sapiente natus ratione esse. Cum ut id dolorem quia explicabo. Repudiandae deserunt eos nihil saepe atque exercitationem consectetur fugit.</p>
-
-        <p>Dignissimos molestias doloremque earum eum accusamus accusamus qui. Incidunt aut doloribus nihil rem sed vero consequuntur at. Voluptatum officia cupiditate et sit tenetur ut. Consequatur dolorum et illum soluta illo quas corrupti. Facilis voluptas qui aut utp cumque. Ea soluta laborum incidunt quaerat similique molestias laborum sit.</p>
-
-        <img src="https://via.placeholder.com/360x480" alt="">
-
-        <p>Non praesentium aspernatur voluptas ut. Cumque voluptatum eveniet repellat ullam saepe sed sit. Ipsa magni labore expedita ab et voluptatem officiis. Ad deleniti quo natus voluptatem. Quam error nulla ut sed ducimus nihil iure perspiciatis. Necessitatibusp itaque fuga nihil alias distinctio beatae perferendis.</p>
-
-        <p>Doloribus officia repudiandae corporis odit aut. Ut adipisci vero ea facilis ipsam et ut. Odio voluptas quia voluptate ea consequatur voluptatem commodi. Non omnis eum numquam distinctio commodi illo.</p>
-    </div>
-
-    <div class="full-width">
-        <img src="https://via.placeholder.com/1024x576" alt="">
-    </div>
-
-    <div class="text">
-
-        <p>Et mollitia aut sit natus dignissimos est quia. Fugiat id architecto molestiae et voluptate. Quaerat veniam assumenda laborum est sequi rerum ea voluptas. Error et exercitationem nulla ipsam aspernatur in quis. Vero eaque quibusdam commodi autem est. Debitisp fugiat quas nihil labore placeat vel.</p>
-
-        <p>Molestiae est autem laborum non. Delectus rerum saepe laudantium repellat ullam. Voluptas sit qui eius voluptate. Sit ducimus iste laudantium labore sed veritatis. Sed maxime qui beatae tempora excepturi eaque perspiciatis cupiditate.</p>
-    </div>
-</section>
-
-
-<section class="basic_text_wrapper--picture-demo">
-    <h2>Add srcsets for scaling purposes</h2>
-    <p>Lets just add some different srcset and sizes so we can see what happens at different browser width / screen density combos. We're also going to wrap a few images so they have max-widths, perhaps? I'm trying to change as little as possible at this point; I'm not making images as "responsive" to my interests/needs as I'm interested in doing, quite yet.</p>
-</section>
-
-<section class="picture_element_demo">
-
-    <div class="text">
-        <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.</p>
-
-        <div class="picture-element-demo--max-150">
-            <img class="picture-element-demo--float-right"
-                 srcset="https://via.placeholder.com/1200x1200?Text=Not+Even+Real  1200w,
-                         https://via.placeholder.com/600x600?Text=Giant  600w,
-                         https://via.placeholder.com/450x450?Text=Middle   450w,
-                         https://via.placeholder.com/150x150?Text=Small   150w"
-                 sizes="150px"
-                 src="https://via.placeholder.com/150x150"
-                 alt="">
-        </div>
-
-        <p>Similique est iste incidunt labore sit. Sit reprehenderit qui qui consectetur deserunt autem. Rerum in eum consequatur placeat reiciendis. Deleniti laboriosam rem aut voluptas omnis repellat dolor inventore. Sed quaerat consequatur consequatur quas illo vel.p Ut ex voluptates non architecto.</p>
-
-        <p>Omnis pariatur explicabo aut odit. Eos ea a praesentium culpa nihil doloremque voluptas. Nobis sint autem suscipit vel temporibus maxime. Temporibus sunt officiis eius. Labore odio dolores debitis repellat nihil. Molestias voluptatem qui cupiditate itaque quiap rem id.</p>
-
-        <p>Sunt vel dicta deserunt corrupti accusamus omnis voluptates rerum. Ratione aut quibusdam laboriosam laborum ut. Dolor consequatur quam velit doloremque.</p>
-
-        <img class="picture-element-demo--float-left picture-element-demo--float-left--max-480"
-             srcset="https://via.placeholder.com/1200x1200?Text=Not+Even+Real  1200w,
-                         https://via.placeholder.com/600x600?Text=Giant  600w,
-                         https://via.placeholder.com/450x450?Text=Middle   450w,
-                         https://via.placeholder.com/150x150?Text=Small   150w"
-             sizes="150px"
-
-             src="https://via.placeholder.com/480x360"
-             alt="">
-
-        <p>Unde et nesciunt ex optio sapiente animi. Voluptas laboriosam non eos. Velit sapiente natus ratione esse. Cum ut id dolorem quia explicabo. Repudiandae deserunt eos nihil saepe atque exercitationem consectetur fugit.</p>
-
-        <p>Dignissimos molestias doloremque earum eum accusamus accusamus qui. Incidunt aut doloribus nihil rem sed vero consequuntur at. Voluptatum officia cupiditate et sit tenetur ut. Consequatur dolorum et illum soluta illo quas corrupti. Facilis voluptas qui aut utp cumque. Ea soluta laborum incidunt quaerat similique molestias laborum sit.</p>
-
-        <img src="https://via.placeholder.com/360x480" alt="">
-
-        <p>Non praesentium aspernatur voluptas ut. Cumque voluptatum eveniet repellat ullam saepe sed sit. Ipsa magni labore expedita ab et voluptatem officiis. Ad deleniti quo natus voluptatem. Quam error nulla ut sed ducimus nihil iure perspiciatis. Necessitatibusp itaque fuga nihil alias distinctio beatae perferendis.</p>
-
-        <p>Doloribus officia repudiandae corporis odit aut. Ut adipisci vero ea facilis ipsam et ut. Odio voluptas quia voluptate ea consequatur voluptatem commodi. Non omnis eum numquam distinctio commodi illo.</p>
-    </div>
-
-    <div class="full-width">
-        <img src="https://via.placeholder.com/1024x576" alt="">
-    </div>
-
-    <div class="text">
-
-        <p>Et mollitia aut sit natus dignissimos est quia. Fugiat id architecto molestiae et voluptate. Quaerat veniam assumenda laborum est sequi rerum ea voluptas. Error et exercitationem nulla ipsam aspernatur in quis. Vero eaque quibusdam commodi autem est. Debitisp fugiat quas nihil labore placeat vel.</p>
-
-        <p>Molestiae est autem laborum non. Delectus rerum saepe laudantium repellat ullam. Voluptas sit qui eius voluptate. Sit ducimus iste laudantium labore sed veritatis. Sed maxime qui beatae tempora excepturi eaque perspiciatis cupiditate.</p>
-    </div>
-</section>
---}}
-
 
 {{> bottombar }}
