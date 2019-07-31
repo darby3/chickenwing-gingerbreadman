@@ -175,6 +175,55 @@ layout: responsive-images-demo
     <p>* - Probably because it gets wacky complex, thinking through the various options and having to come up with all the crops and multiresolutioned copies of the crops. Maybe this isn't something you'd want to do in an entire photo gallery kind of scenario. Or inside a CMS. But for that one striking image you want to have pop <em>just so</em>...</p>
 </section>
 
+<section class="code-wrapper">
+    <p>Here's the HTML code.</p>
+    <code><pre>
+&lt;figure class="picture_element_demo__image--dramatic"&gt;
+    &lt;picture&gt;
+        &lt;source media="(max-width: 520px)"
+                srcset="https://via.placeholder.com/900x900?text=1:1+Detail+Shot+(900x900) 900w,
+                        https://via.placeholder.com/600x600?text=1:1+Detail+Shot+(600x600) 600w,
+                        https://via.placeholder.com/450x450?text=1:1+Detail+Shot+(450x450) 450w,
+                        https://via.placeholder.com/300x300?text=1:1+Detail+Shot+(300x300) 300w,
+                        https://via.placeholder.com/150x150?text=1:1+Detail+Shot+(150x150) 150w"
+                sizes="calc(100vw - 5rem)"&gt;
+        &lt;source media="(max-width: 761px)"
+                srcset="https://via.placeholder.com/200x150?text=Landscape-ish+(200x150) 200w,
+                        https://via.placeholder.com/1200x900?text=Landscape-ish+(1200x900) 1200w,
+                        https://via.placeholder.com/800x600?text=Landscape-ish+(800x600) 800w,
+                        https://via.placeholder.com/400x300?text=Landscape-ish+(400x300) 400w"
+                sizes="calc(100vw - 5rem)"&gt;
+        &lt;source media="(min-width: 762px)"
+                srcset="https://via.placeholder.com/300x533?text=16:9+(300x533) 300w,
+                        https://via.placeholder.com/600x1066?text=16:9+(600x1066) 600w,
+                        https://via.placeholder.com/900x1599?text=16:9+(900x1599) 900w,
+                        https://via.placeholder.com/150x266?text=16:9+(150x266) 150w"
+                sizes="300px"&gt;
+        &lt;img class=""
+             src="https://via.placeholder.com/300x300"
+             alt=""&gt;
+    &lt;/picture&gt;
+
+    &lt;figcaption&gt;Our cool responsive image that (blah blah blah).&lt;/figcaption&gt;
+&lt;/figure&gt;
+    </pre></code>
+
+    <p>And a touch of sass:</p>
+    <code>
+        <pre>
+.picture_element_demo__image--dramatic {
+  margin: auto;
+
+  @media screen and (min-width: 762px) {
+    float: right;
+    margin: 0 0 1rem 1rem;
+    max-width: 300px;
+  }
+}
+        </pre>
+    </code>
+</section>
+
 <section class="picture_element_demo">
     <div class="picture_element_demo__text-column">
         <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.</p>
@@ -224,5 +273,16 @@ layout: responsive-images-demo
 
     </div>
 </section>
+
+
+
+{{!-- Step 6 --}}
+
+<section class="basic_text_wrapper--picture-demo">
+    <h2>Step 6: To come: using aspect ratio media queries to make your wildest layout fantasies come true</h2>
+    <p>If we want to get <em>very</em> funky, we can use aspect ratios in our media queries, to better lay out our content (and serve up properly formatted images) based on whether the user is looking at a page in landscape or portrait mode.</p>
+    <p>I'm going to come back to this one later, because I know that thinking it through can cause low-grade headaches. The good news is once you do figure it out and do the original think-through, I think it gets easier to duplicate the technique on demand. Maybe. I'm not sure. I haven't had as much demand for it as I'd have originall thought or liked...</p>
+</section>
+
 
 {{> bottombar }}
