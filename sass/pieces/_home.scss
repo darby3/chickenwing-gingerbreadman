@@ -8,6 +8,13 @@
 
 .home__section {
   padding: 2rem 2rem;
+
+  h1 {
+    margin: 2rem 0;
+  }
+  h2 {
+    margin: 1rem 0;
+  }
 }
 
 .home__section--title {
@@ -27,20 +34,26 @@
 }
 
 .home__section--variant-1 {
-  --primary: #ABD904;
-  --secondary: #3E5902;
+  --primary: #6CFEE6;
+  --secondary: #5A3B5D;
   --linkcontrast: #fff;
 }
 
 .home__section--variant-2 {
-  --primary: #3E5902;
-  --secondary: #ABD904;
-  --linkcontrast: #000;
+  --primary: #F4FE6C;
+  --secondary: #3B3F5D;
+  --linkcontrast: #fff;
 }
 
 .home__section--variant-3 {
   --primary: #14282E;
   --secondary: #DBD1A0;
+  --linkcontrast: #000;
+}
+
+.home__section--variant-4 {
+  --primary: #3B3F07;
+  --secondary: #A4E2F8;
   --linkcontrast: #000;
 }
 
