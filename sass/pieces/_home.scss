@@ -6,6 +6,22 @@
   border-bottom: 1rem solid #1B7FD1;
 }
 
+.home__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  align-items: stretch;
+  background-color: #24292D;
+  grid-gap: 6px 6px;
+  padding: 6px;
+
+  .home__section {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .home__section {
   padding: 2rem 2rem;
 
@@ -46,12 +62,42 @@
 }
 
 .home__section--variant-3 {
+  --primary: #4B2A39;
+  --secondary: #9BF029;
+  --linkcontrast: #000;
+}
+
+.home__section--variant-4 {
+  --primary: #791B83;
+  --secondary: #E8E8C4;
+  --linkcontrast: #000;
+}
+
+.home__section--variant-5 {
+  --primary: #0A5A01;
+  --secondary: #A8DAE3;
+  --linkcontrast: #000;
+}
+
+.home__section--variant-6 {
+  --primary: #F96CB3;
+  --secondary: #03313A;
+  --linkcontrast: #fff;
+}
+
+.home__section--variant-7 {
+  --primary: #1AD4F9;
+  --secondary: #3B3036;
+  --linkcontrast: #fff;
+}
+
+.home__section--variant-x {
   --primary: #14282E;
   --secondary: #DBD1A0;
   --linkcontrast: #000;
 }
 
-.home__section--variant-4 {
+.home__section--variant-y {
   --primary: #3B3F07;
   --secondary: #A4E2F8;
   --linkcontrast: #000;
@@ -70,6 +116,7 @@
     padding: 2rem;
     background-color: var(--secondary);
     color: var(--primary);
+
     transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
     text-decoration: none;
 
