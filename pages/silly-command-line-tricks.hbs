@@ -37,13 +37,24 @@ title: Silly Command Line Tricks
 <section class="basic_text_wrapper">
     <h2>Things to document</h2>
     <p>Here's a bunch of things I've used; I should document how they work.</p>
+</section>
 
+<section class="basic_text_wrapper">
     <p>Grabbing a bunch of html and sticking it in a folder</p>
 </section>
 
 <section class="code-wrapper">
     <code><pre>
-wget -E -r -l 0 --follow-tags=a --reject pdf,jpg,png http://oberlincollege.dev.dd:8083/</pre></code>
+wget -E -r -l 0 --follow-tags=a --reject pdf,jpg,png {URL}</pre></code>
+</section>
+
+<section class="basic_text_wrapper">
+    <p>Grabbing a bunch of html and sticking it in a folder, but using a specific list of urls loaded from a file.</p>
+</section>
+
+<section class="code-wrapper">
+    <code><pre>
+wget -pki ./urls.txt</pre></code>
 </section>
 
 <section class="basic_text_wrapper">
@@ -52,7 +63,7 @@ wget -E -r -l 0 --follow-tags=a --reject pdf,jpg,png http://oberlincollege.dev.d
 
 <section class="code-wrapper">
     <code><pre>
-grep -h -o -r -E -e class=\"\([a-zA-Z0-9\ _-]+\)\" | cut -f 2 -d \" | gsed 's/ /\n/g' | sort | uniq > ~/temp/file-to-store-this-information-in.txt</pre></code>
+grep -h -o -r -E -e class=\"\([a-zA-Z0-9\ _-]+\)\" | cut -f 2 -d \" | gsed 's/ /\n/g' | sort | uniq > ~/temp/output-file.txt</pre></code>
 </section>
 
 <section class="basic_text_wrapper">
@@ -65,6 +76,15 @@ grep -h -o -r -E -e class=\"\([a-zA-Z0-9\ _-]+\)\" | cut -f 2 -d \" | gsed 's/ /
 </section>
 
 <section class="basic_text_wrapper">
+    <p>Yanking classes out of a css file, and storing the list in a file.</p>
+</section>
+
+<section class="code-wrapper">
+    <code><pre>
+grep --color -oP -e '(?<=\.)(-?[_a-zA-Z]+[_a-zA-Z0-9-]*)(?=[ .,])' ./file.css | sort | uniq > ~/temp/output-file.txt</pre></code>
+</section>
+
+<section class="basic_text_wrapper">
     <p>Renaming a collection of files, replacing all the spaces with underscores.</p>
 </section>
 
@@ -74,8 +94,7 @@ find . -name "* *" -type f | rename 's/ /_/g'</pre></code>
 </section>
 
 <section class="basic_text_wrapper">
-    <p>Getting the history of the number of lines in a file over history from a git repo.</p>
-    <p><a href="https://namingthingsishard.blog/node/111">Reference</a>.</p>
+    <p>Getting the history of the number of lines in a file over history from a git repo. (<a href="https://namingthingsishard.blog/node/111">Reference</a>.)</p>
 </section>
 
 <section class="code-wrapper">
