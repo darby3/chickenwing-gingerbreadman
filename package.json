@@ -33,9 +33,9 @@
       ],
       "extensions": "hbs"
     },
-    "rebuild": {
+    "home": {
       "patterns": [
-        "templates"
+        "home"
       ],
       "extensions": "hbs"
     },
@@ -56,10 +56,10 @@
     "clean": "rm -r build/",
     "preview": "live-server --no-browser --open=build/ --watch=build/ --mount=/:build/ --ignore=**/*tmp-browserify*",
     "build": "assemble",
-    "rebuild": "assemble rebuild:all",
     "updates": "assemble listing:updates",
+    "home": "assemble home",
     "watch": "npm-watch",
-    "predev": "mkdir -p build && run-p sass js img build",
+    "predev": "mkdir -p build && run-p sass js img",
     "dev": "run-p preview watch"
   },
   "author": "",
