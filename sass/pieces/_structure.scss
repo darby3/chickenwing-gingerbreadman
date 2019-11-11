@@ -117,6 +117,16 @@
   }
 }
 
+.updatesBar__secondary {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: normal;
+
+  > * {
+    margin-left: 1rem;
+  }
+}
 // Basic wrappery stuff
 
 .basic_text_wrapper {
