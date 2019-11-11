@@ -5,8 +5,8 @@ layout: responsive-images-demo
 
 {{> topbar }}
 
-<section class="basic_text_wrapper--picture-demo-header">
-    <div class="basic_text_wrapper--picture-demo-header--text">
+<section class="basic_text_wrapper--demo-header">
+    <div class="basic_text_wrapper--demo-header--text">
         <h1>Demo: Responsive Images</h1>
         <p>Stepping through ideas for the implementation of a picture element. Inspired by <a href="https://alistapart.com/article/responsive-images-in-practice/">this A List Apart post</a> and my own later (but now also old) <a href="https://namingthingsishard.blog/node/69">follow-up blog post</a>. In the course of working on this, <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">this MDN page</a> came in handy as a clarifying agent.</p>
     </div>
@@ -14,7 +14,7 @@ layout: responsive-images-demo
 
 {{!-- Step 1 --}}
 
-<section class="basic_text_wrapper--picture-demo">
+<section class="basic_text_wrapper--demo-text">
     <h2>Step 1: Start with something simple but fairly useful</h2>
     <p>We have some text with a max-width on it; we have an figure/image combo that starts off as a centered block element. Then we float it into the text when there's enough space to support it. Fairly basic responsive effect.</p>
 </section>
@@ -44,7 +44,7 @@ layout: responsive-images-demo
 
 {{!-- Step 2 --}}
 
-<section class="basic_text_wrapper--picture-demo">
+<section class="basic_text_wrapper--demo-text">
     <h2>Step 2: Now add srcset and sizes to the img element</h2>
     <p>What we want to do is get some idea of what the browsers loads and if in fact various versions of the image are in fact loaded. Also we want to make sure that what we've done so far actually works in this context.</p>
     <p>This is something you kind of have to mess around with to get an idea of what's happening. As the List Apart article mentions, it's also not something we want to be too picky about at this point. We're mostly interested in helping the browser understand what version of the image it should go get based on the factors its aware of that we either aren't (bandwidth, supposedly) or shouldn't care about (screen size).</p>
@@ -84,7 +84,7 @@ layout: responsive-images-demo
 
 {{!-- Step 3 --}}
 
-<section class="basic_text_wrapper--picture-demo">
+<section class="basic_text_wrapper--demo-text">
     <h2>Step 3: Changing it up with art direction</h2>
     <p>In this case, we (at least for now) dump the srcset stuff in favor of actually changing the image based on screen conditions we're interested in responding to.</p>
     <p>In this example we're changing as little as possible: we're keeping a square image, but we'd change the crop of the image. When the image is floated, in this case, we'd have more "surrounding context" in the image. When the image is centered, we'd crop in a bit more tight, onto a specific detail of the image.</p>
@@ -123,7 +123,7 @@ layout: responsive-images-demo
 
 {{!-- Step 4 --}}
 
-<section class="basic_text_wrapper--picture-demo">
+<section class="basic_text_wrapper--demo-text">
     <h2>Step 4: But like actually seriously change it up with art direction, for realsies</h2>
     <p>That's a bare-bones example. What we really want to do with something like this is more like...</p>
     <ul>
@@ -168,7 +168,7 @@ layout: responsive-images-demo
 
 {{!-- Step 5 --}}
 
-<section class="basic_text_wrapper--picture-demo">
+<section class="basic_text_wrapper--demo-text">
     <h2>Step 5: And now...combine!</h2>
     <p>Can we mash up the complex example from step 4 with the srcset'y goodness of step 2? Sure! Why not!*</p>
     <p>We're actually already on the way, as the source element is using a srcset attribute. We just need to add some more resolutions of each image, and toss in some sizes detail, and away we go.</p>
@@ -278,7 +278,7 @@ layout: responsive-images-demo
 
 {{!-- Step 6 --}}
 
-<section class="basic_text_wrapper--picture-demo">
+<section class="basic_text_wrapper--demo-text">
     <h2>Step 6: To come: using aspect ratio media queries to make your wildest layout fantasies come true</h2>
     <p>If we want to get <em>very</em> funky, we can use aspect ratios in our media queries, to better lay out our content (and serve up properly formatted images) based on whether the user is looking at a page in landscape or portrait mode.</p>
     <p>I'm going to come back to this one later, because I know that thinking it through can cause low-grade headaches. The good news is once you do figure it out and do the original think-through, I think it gets easier to duplicate the technique on demand. Maybe. I'm not sure. I haven't had as much demand for it as I'd have originall thought or liked...</p>

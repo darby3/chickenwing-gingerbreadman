@@ -127,6 +127,7 @@
     margin-left: 1rem;
   }
 }
+
 // Basic wrappery stuff
 
 .basic_text_wrapper {
@@ -145,4 +146,41 @@
   width: calc(100% - 4rem);
   max-width: 695px;
   margin: 0 auto 8rem;
+}
+
+// Explanatory wrappers
+
+.basic_text_wrapper--demo-header {
+  width: 100%;
+  margin: 0 0 4rem 0;
+  padding: 2rem 0 4rem 0;
+
+  background: var(--background);
+  color: var(--foreground);
+
+  --foreground: #6CFEE6;
+  --background: #5A3B5D;
+}
+
+.basic_text_wrapper--demo-header--text {
+  width: calc(100% - 4rem);
+  max-width: calc(1024px - 4rem);
+  margin: auto;
+
+  a {
+    color: #fff;
+  }
+}
+
+.basic_text_wrapper--demo-text {
+  width: calc(100% - 4rem);
+  max-width: calc(1024px - 4rem);
+  margin: 4rem auto;
+  padding: 2rem 2rem 4rem 2rem;
+
+  background: var(--background);
+  color: var(--foreground);
+
+  --foreground: #3B3F07;
+  --background: #A4E2F8;
 }
