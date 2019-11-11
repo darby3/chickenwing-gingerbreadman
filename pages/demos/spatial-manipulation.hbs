@@ -1,0 +1,50 @@
+---
+title: Demo - Spatial Manipulation
+layout: spatial-manipulation-demo
+---
+
+{{> topbar }}
+
+<section class="basic_text_wrapper--demo-header">
+    <div class="basic_text_wrapper--demo-header--text">
+        <h1>Demo: Spatial Manipulation</h1>
+        <p>Not sure if this is going to be much of a demo; it might be more of a quick reference guide to checking the values of the position and/or size of an object on a page, and to manipulating these values on demand.</p>
+    </div>
+</section>
+
+{{!-- Step 1 --}}
+
+<section class="basic_text_wrapper--demo-text">
+    <h2>Step 1: Start with some simple value reading of a regular in-flow element</h2>
+    <p>We have some text with a max-width on it; we have an figure/image combo that starts off as a centered block element. Then we float it into the text when there's enough space to support it. Fairly basic responsive effect.</p>
+</section>
+
+<section class="spatial-manipulation-demo basic_text_wrapper">
+    <div id="smd-block1" class="spatial-manipulation-demo--text-block">
+        <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.</p>
+    </div>
+
+    <div class="spatial-manipulation-demo--buttons">
+        <button id="smd-block1-get">Get some values:</button>
+
+        <div id="smd-block1-output">
+            <!-- Results go here -->
+        </div>
+    </div>
+</section>
+
+{{> bottombar }}
+
+{{!-- Templates --}}
+
+
+
+
+<div class="templates">
+    <template id="result_box">
+        <div class="results_box">
+            <h3>Results</h3>
+            <p>Window size: <br /><span id="results-winsize"></span></p>
+        </div>
+    </template>
+</div>
