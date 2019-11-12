@@ -12,6 +12,7 @@ layout: spatial-manipulation-demo
     </div>
 </section>
 
+
 {{!-- Step 1 --}}
 
 <section class="basic_text_wrapper--demo-text">
@@ -21,6 +22,7 @@ layout: spatial-manipulation-demo
 
 <section class="spatial-manipulation-demo basic_text_wrapper">
     <div id="smd-block1" class="spatial-manipulation-demo--text-block">
+        <p>This is block number one!</p>
         <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.</p>
     </div>
 
@@ -33,18 +35,170 @@ layout: spatial-manipulation-demo
     </div>
 </section>
 
+
+{{!-- Step 2 --}}
+
+<section class="basic_text_wrapper--demo-text">
+    <h2>Step 2: Start with some simple value reading of a regular in-flow element ... but actually have it be the child of a relatively-positioned element</h2>
+    <p>Basically the same thing as above except the div we're targeting is the child of a relatively positioned container div. That sets off some of our offsets. Ha ha.</p>
+</section>
+
+<section class="spatial-manipulation-demo basic_text_wrapper">
+    <div id="relative-container" style="position: relative;">
+        <div id="smd-block2" class="spatial-manipulation-demo--text-block">
+            <p>This is the second block. This is inside a relatively positioned container element.</p>
+            <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.  Itaque iure quo voluptas possimus sunt optio ut. Quasi facere rem exercitationem et dolores. Mollitia nobis alias pariatur eum impedit. Qui soluta id quos repellat et atque. </p>
+        </div>
+    </div>
+
+    <div class="spatial-manipulation-demo--buttons">
+        <button id="smd-block2-get">Get some values:</button>
+
+        <div id="smd-block2-output">
+            <!-- Results go here -->
+        </div>
+    </div>
+</section>
+
+
+{{!-- Step 3 --}}
+
+<section class="basic_text_wrapper--demo-text">
+    <h2>Step 3: Calculate a few things</h2>
+    <p>Back to our basic flow content: what can we calculate given the numbers we have available to us?</p>
+</section>
+
+<section class="spatial-manipulation-demo basic_text_wrapper">
+    <div id="smd-block3" class="spatial-manipulation-demo--text-block">
+        <p>This is block number three! We're going to calculate a few more things to see what we can do with the numbers we have on hand.</p>
+        <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.</p>
+    </div>
+
+    <div class="spatial-manipulation-demo--buttons">
+        <button id="smd-block3-get">Get some values:</button>
+
+        <div id="smd-block3-output">
+            <!-- Results go here -->
+        </div>
+    </div>
+</section>
+
+
+{{!-- Step 4 --}}
+
+<section class="basic_text_wrapper--demo-text">
+    <h2>Step 4: What about Element.getBoundingClientRect?</h2>
+    <p>Well, sure.</p>
+</section>
+
+<section class="spatial-manipulation-demo basic_text_wrapper">
+    <div id="smd-block4" class="spatial-manipulation-demo--text-block">
+        <p>This is block number four, which we're going to investigate using Element.getBoundingClientRect().</p>
+        <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.</p>
+    </div>
+
+    <div class="spatial-manipulation-demo--buttons">
+        <button id="smd-block4-get">Get some values:</button>
+
+        <div id="smd-block4-output">
+            <!-- Results go here -->
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="basic_text_wrapper--demo-text">
+    <h2>Step Null: There's a kill screen coming up in Donkey Kong</h2>
+    <p>I just need a bunch of empty nonsense down here so I can scroll things off the top of the page if needed.</p>
+    <p>Quidem et quos voluptate dolor quo a. Nam omnis quia ipsa sint odit harum quas. Sunt delectus dolores voluptatibus est. Non in autem corporis neque est.</p>
+    <p>Aut vitae qui sit. Esse nobis quasi atque dolorem modi. Sed soluta neque necessitatibus ea aut eum. Minus consequatur dignissimos impedit ut nemo eligendi facere. Sint et enim totam.</p>
+    <p>Animi minus quo asperiores quae aliquid nisi voluptate. Qui qui perspiciatis provident ut doloribus laboriosam ex. Atque ducimus consequatur nostrum explicabo eaque consectetur voluptatem. Autem qui ipsam et exercitationem ex fugit.</p>
+    <p>Voluptatibus odio facere aspernatur quia tenetur voluptatum ut non. Cum eveniet sapiente repellendus consequatur excepturi saepe ad. Eum consequatur cum tenetur optio.</p>
+    <p>Atque pariatur quod nobis veritatis qui vel voluptatem et. Sunt qui qui ut saepe ea ut. Natus deserunt voluptatem exercitationem facere. Consequatur cumque atque ratione. Officiis quos incidunt aut aliquam dolorem autem repudiandae dolores.</p>
+</section>
+
+
 {{> bottombar }}
 
 {{!-- Templates --}}
-
-
-
 
 <div class="templates">
     <template id="result_box">
         <div class="results_box">
             <h3>Results</h3>
             <p>Window size: <br /><span id="results-winsize"></span></p>
+            <p>Doc scroll (y position): <br /><span id="results-docscroll"></span></p>
+            <p>Offsets of the first text block above: <br /><span id="results-offsets"></span></p>
+        </div>
+    </template>
+
+    <template id="result_box_b">
+        <div class="results_box">
+            <h3>Results</h3>
+            <p>Doc scroll (y position): <br /><span id="results-docscroll-b"></span></p>
+            <p>Offsets of the second text block above: <br /><span id="results-offsets-b"></span></p>
+        </div>
+    </template>
+
+    <template id="result_box_c">
+        <div class="results_box">
+            <h3>Results</h3>
+            <p>Window size: <br /><span id="results-winsize-c"></span></p>
+            <p>Doc scroll (y position): <br /><span id="results-docscroll-c"></span></p>
+            <p>Offsets of the first text block above: <br /><span id="results-offsets-c"></span></p>
+
+            <h4>Calculate stuff</h4>
+
+            <h5>Distance from top of window</h5>
+
+            <p>dElTopWindowTop: <span id="results-fromtop"></span></p>
+            <p>The offsetTop of the div <em>minus</em> the docscroll offset. Or, the total offset of the div minus all the pixels we can't see above the top edge of the window.</p>
+            <p>This number will be <em>positive</em> and <em>less than</em> the window height if the top is in the window. It will be <em>greater than</em> the window height if it is below the bottom of the window, and <em>negative</em> if it is above the top of the window.</p>
+
+            <h5>Distance from bottom of window</h5>
+
+            <p>dElTopWindowBottom: <span id="results-frombottom"></span></p>
+            <p>This is the offset from the top of the window, subtracted from the inner height of the window. This is the distance between the <em>top</em> of the div and the bottom of the window.</p>
+            <p>This number will be <em>positive</em> and <em>less than</em> the window height if the top is in the window. It will be <em>negative</em> if the top of the element is below the bottom of the window, and <em>greater than</em> the height of the window if it is above the top of the window.</p>
+
+            <h5>Distance between the bottom of the element and the top of the window</h5>
+
+            <p>dElBottomWindowTop: <span id="results-bottomtotop"></span></p>
+            <p>This is dElTopWindowTop plus the innerHeight of the element.</p>
+            <p>This number will be <em>negative</em> if the bottom of the element is above the top of the window.</p>
+
+            <h5>Distance between the bottom of the element and the bottom of the window</h5>
+
+            <p>dElBottomWindowBottom: <span id="results-bottomtobottom"></span></p>
+            <p>This is the dElBottomwindowTop subtracted from the window height.</p>
+            <p>This number will be <em>negative</em> if the bottom of the element is below the bottom of the window.</p>
+
+            <h4>Fun facts!</h4>
+
+            <h5>Is it visible?</h5>
+
+            <p>Is it visible? <br /> <span id="results-visible"></span></p>
+
+            <p>For the element to be visible, either the top or the bottom need to be visible in the window. So dElTopWindowTop needs to be positive and less than the window height, <em>or</em>, dElBottomWindowBottom needs to be positive and less than the window height.</p>
+        </div>
+    </template>
+
+    <template id="result_box_d">
+        <div class="results_box">
+            <h3>Results</h3>
+            <div id="results_box_d_results">
+                <!-- Results -->
+            </div>
+
+            <h4>Fun facts!</h4>
+
+            <h5>Is it visible?</h5>
+
+            <p>Is it visible? <br /> <span id="results-visible"></span></p>
+
+            <p>For the element to be <em>even remotely</em> visible, either the top or the bottom need to be visible in the window. So top needs to positive and less than the window height, <em>or</em>, bottom needs to be positive and less than the window height.</p>
         </div>
     </template>
 </div>
