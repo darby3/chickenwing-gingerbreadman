@@ -11,7 +11,9 @@
         hiThere();
 
         var spatialManipulation = require("./modules/spatialManipulation");
-        spatialManipulation();
+        if (document.querySelector('#spatial-manipulation-demo')) {
+            spatialManipulation();
+        }
 
         // uhm.js
         const y = 9;
