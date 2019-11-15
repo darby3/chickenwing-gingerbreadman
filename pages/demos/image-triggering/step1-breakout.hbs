@@ -50,6 +50,17 @@ layout: image-triggering-demo
         transition: top 0.75s ease-out, opacity 0.15s ease-in;
     }
 
+    img.effect8 {
+        border-radius: 25%;
+        width: 0;
+        opacity: 0;
+        margin: auto;
+        height: 600px;
+        object-fit: cover;
+        transform: scale(1, 0.25);
+        transition: border-radius 0.45s ease-in-out, width 0.55s ease-in-out, opacity 0.4s ease-out, transform 0.5s ease-in-out;
+    }
+
     .img-effect-wrapper {
         overflow: hidden;
     }
@@ -122,6 +133,13 @@ layout: image-triggering-demo
         <img class="effect7" src="/img/it-demo/g.jpg" alt="">
     </div>
 
+    <h2>Effect 8</h2>
+
+    <p>Corrupti occaecati atque nam. Repudiandae dignissimos veritatis natus odio. Ea totam quia quasi corrupti iste. Maiores aut reprehenderit quod vel est autem officiis et. Atque est aspernatur officia necessitatibus voluptatem inventore ea ab. Temporibus rem excepturi autem.</p>
+
+    <img class="effect8" src="/img/it-demo/a.jpg" alt="">
+
+
     <p>Corrupti occaecati atque nam. Repudiandae dignissimos veritatis natus odio. Ea totam quia quasi corrupti iste. Maiores aut reprehenderit quod vel est autem officiis et. Atque est aspernatur officia necessitatibus voluptatem inventore ea ab. Temporibus rem excepturi autem.</p>
 
     <p>Corrupti occaecati atque nam. Repudiandae dignissimos veritatis natus odio. Ea totam quia quasi corrupti iste. Maiores aut reprehenderit quod vel est autem officiis et. Atque est aspernatur officia necessitatibus voluptatem inventore ea ab. Temporibus rem excepturi autem.</p>
@@ -151,6 +169,7 @@ layout: image-triggering-demo
     let imagesEffect5 = document.querySelectorAll("img.effect5");
     let imagesEffect6 = document.querySelectorAll("img.effect6");
     let imagesEffect7 = document.querySelectorAll("img.effect7");
+    let imagesEffect8 = document.querySelectorAll("img.effect8");
 
     function visibilityChecks(results) {
         let isItVisible = (results.top > 0 && results.top < window.innerHeight) ||
@@ -232,7 +251,7 @@ layout: image-triggering-demo
             el.style.opacity = (checks.isItCompletelyVisible) ? "1" : null;
         });
 
-        // Effect 6
+        // Effect 7
         imagesEffect7.forEach(function (el) {
             let results = el.parentElement.getBoundingClientRect();
 
@@ -241,6 +260,19 @@ layout: image-triggering-demo
 
             el.style.top = (checks.isItCompletelyVisible) ? "0px" : null;
             el.style.opacity = (checks.isItCompletelyVisible) ? "1" : null;
+        });
+
+        // Effect 8
+        imagesEffect8.forEach(function (el) {
+            let results = el.getBoundingClientRect();
+
+            // Visibility checks
+            let checks = visibilityChecks(results);
+
+            el.style.borderRadius = (checks.isItCompletelyVisible) ? "0%" : null;
+            el.style.width = (checks.isItCompletelyVisible) ? "100%" : null;
+            el.style.opacity = (checks.isItCompletelyVisible) ? "1" : null;
+            el.style.transform = (checks.isItCompletelyVisible) ? "scale(1, 1)" : null;
         });
     });
 
