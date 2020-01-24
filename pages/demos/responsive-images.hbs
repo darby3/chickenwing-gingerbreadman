@@ -19,6 +19,34 @@ layout: responsive-images-demo
     <p>We have some text with a max-width on it; we have an figure/image combo that starts off as a centered block element. Then we float it into the text when there's enough space to support it. Fairly basic responsive effect.</p>
 </section>
 
+<section class="code-wrapper">
+    <p>Here's the HTML code.</p>
+
+    <code><pre>
+&lt;figure class="picture_element_demo__image--float-right"&gt;
+    &lt;img class=""
+         src="https://via.placeholder.com/300x300"
+         alt=""&gt;
+    &lt;figcaption&gt;Our cool responsive image that sometimes floats.&lt;/figcaption&gt;
+&lt;/figure&gt;
+    </pre></code>
+
+    <p>And a touch of sass:</p>
+    <code>
+        <pre>
+.picture_element_demo__image--float-right {
+  margin: auto;
+  max-width: 300px;
+
+  @media screen and (min-width: 762px) {
+    float: right;
+    margin: 0 0 1rem 1rem;
+  }
+}
+        </pre>
+    </code>
+</section>
+
 <section class="picture_element_demo">
     <div class="picture_element_demo__text-column">
         <p>Architecto ex dolorum vel et et porro non. Placeat libero reiciendis consequatur et. Quis illo eos saepe quaerat. Eligendi perferendis itaque cupiditate soluta repellat ut voluptatem qui.</p>
@@ -50,6 +78,41 @@ layout: responsive-images-demo
     <p>This is something you kind of have to mess around with to get an idea of what's happening. As the List Apart article mentions, it's also not something we want to be too picky about at this point. We're mostly interested in helping the browser understand what version of the image it should go get based on the factors its aware of that we either aren't (bandwidth, supposedly) or shouldn't care about (screen size).</p>
     <p>Also worth noting, as noted in the List Apart article re: ems in the sizes calc statement: rem, too, seems to fall back to a browser-standard 16 px, so I wasn't quite seeing the results I was expecting, when I originally plugged in <code>(100vw - 4rem)</code>. So I had to scale up my 4rem to match the 20px rem I set in the stylesheet (20px = 16px * 1.25; 4rem * 1.25 = 5rem).</p>
     <p>This stage, ultimately, is about asset management, nothing more. We're not into art direction yet.</p>
+</section>
+
+<section class="code-wrapper">
+    <p>Here's the HTML code.</p>
+
+    <code><pre>
+&lt;figure class="picture_element_demo__image--float-right"&gt;
+    &lt;img class=""
+         srcset="https://via.placeholder.com/900x900?text=Not+Even+Real+(900x900) 900w,
+                 https://via.placeholder.com/600x600?text=Giant+(600x600) 600w,
+                 https://via.placeholder.com/450x450?text=Middle+(450x450) 450w,
+                 https://via.placeholder.com/300x300?text=Small+(300x300) 300w,
+                 https://via.placeholder.com/150x150?text=Tiny+Tiny+(150x150) 150w"
+         sizes="(max-width: 380px) calc(100vw - 5rem),
+                 300px"
+         src="https://via.placeholder.com/300x300"
+         alt=""&gt;
+    &lt;figcaption&gt;Our cool responsive image that sometimes floats and which now includes srcset and sizes attributes, to help the browser download the most sensible version of the image it can.&lt;/figcaption&gt;
+&lt;/figure&gt;
+    </pre></code>
+
+    <p>And a touch of sass:</p>
+    <code>
+        <pre>
+.picture_element_demo__image--float-right {
+  margin: auto;
+  max-width: 300px;
+
+  @media screen and (min-width: 762px) {
+    float: right;
+    margin: 0 0 1rem 1rem;
+  }
+}
+        </pre>
+    </code>
 </section>
 
 <section class="picture_element_demo">
@@ -90,6 +153,43 @@ layout: responsive-images-demo
     <p>In this example we're changing as little as possible: we're keeping a square image, but we'd change the crop of the image. When the image is floated, in this case, we'd have more "surrounding context" in the image. When the image is centered, we'd crop in a bit more tight, onto a specific detail of the image.</p>
     <p>To me this actually feels even more straight-forward than the srcset stuff above. I'm being very explicit about what I'm telling the browser to do: if this condition is true, show this image, if this next condition is true, show this other image.</p>
 </section>
+
+
+<section class="code-wrapper">
+    <p>Here's the HTML code.</p>
+
+    <code><pre>
+&lt;figure class="picture_element_demo__image--float-right"&gt;
+    &lt;picture&gt;
+        &lt;source media="(max-width: 761px)"
+                srcset="https://via.placeholder.com/300x300?text=Detail+Shot"&gt;
+        &lt;source media="(min-width: 762px)"
+                srcset="https://via.placeholder.com/300x300?text=Context-heavy"&gt;
+        &lt;img class=""
+             src="https://via.placeholder.com/300x300"
+             alt=""&gt;
+    &lt;/picture&gt;
+
+    &lt;figcaption&gt;Our cool responsive image that sometimes floats and which now uses a picture wrapper with source elements that dictates actual different images that should be used in specific screen-width scenarios.&lt;/figcaption&gt;
+&lt;/figure&gt;
+    </pre></code>
+
+    <p>And a touch of sass:</p>
+    <code>
+        <pre>
+.picture_element_demo__image--float-right {
+  margin: auto;
+  max-width: 300px;
+
+  @media screen and (min-width: 762px) {
+    float: right;
+    margin: 0 0 1rem 1rem;
+  }
+}
+        </pre>
+    </code>
+</section>
+
 
 <section class="picture_element_demo">
     <div class="picture_element_demo__text-column">
@@ -133,6 +233,44 @@ layout: responsive-images-demo
     </ul>
     <p>Can we build it? Yes we can:</p>
 </section>
+
+<section class="code-wrapper">
+    <p>Here's the HTML code.</p>
+
+    <code><pre>
+&lt;figure class="picture_element_demo__image--dramatic"&gt;
+    &lt;picture&gt;
+        &lt;source media="(max-width: 520px)"
+                srcset="https://via.placeholder.com/300x300?text=1:1+Detail+Shot"&gt;
+        &lt;source media="(max-width: 761px)"
+                srcset="https://via.placeholder.com/400x300?text=4:3+Landscape+With+Context"&gt;
+        &lt;source media="(min-width: 762px)"
+                srcset="https://via.placeholder.com/300x533?text=16:9+Weird+Portrait+Crop"&gt;
+        &lt;img class=""
+             src="https://via.placeholder.com/300x300"
+             alt=""&gt;
+    &lt;/picture&gt;
+
+    &lt;figcaption&gt;Our cool responsive image that sometimes floats and which now uses a picture wrapper with source elements that dictates actual different images that should be used in specific screen-width scenarios.&lt;/figcaption&gt;
+&lt;/figure&gt;
+    </pre></code>
+
+    <p>And a touch of sass:</p>
+    <code>
+        <pre>
+.picture_element_demo__image--dramatic {
+  margin: auto;
+
+  @media screen and (min-width: 762px) {
+    float: right;
+    margin: 0 0 1rem 1rem;
+    max-width: 300px;
+  }
+}
+        </pre>
+    </code>
+</section>
+
 
 <section class="picture_element_demo">
     <div class="picture_element_demo__text-column">
