@@ -36,18 +36,19 @@
   },
   "scripts": {
     "js": "browserify js/app.js -t babelify -o build/js/app.js",
-    "sass": "node-sass --output-style='compressed' --source-map=true sass/ --output build/css/",
+    "js:prod": "browserify -p tinyify js/app.js -t babelify -o build/js/app.js",
+    "sass": "node-sass --output-style='nested' --source-map=true sass/ --output build/css/",
+    "sass:prod": "node-sass --output-style='compressed' sass/ --output build/css/",
     "img": "cp -r images/ build/img/",
     "clean": "rm -r build/",
     "preview": "live-server --no-browser --open=build/ --watch=build/ --mount=/:build/ --ignore=**/*tmp-browserify*",
     "build": "run-s myEleventy:standard",
     "myEleventy:debug": "DEBUG=Eleventy* npx eleventy",
     "myEleventy:standard": "npx eleventy",
-    "updates": "assemble listing:updates",
-    "home": "assemble home",
     "watch": "npm-watch",
     "predev": "mkdir -p build && run-p sass js img",
-    "dev": "run-p preview watch"
+    "dev": "run-p preview watch",
+    "produce": "mkdir -p build && run-p sass:prod js:prod img build"
   },
   "author": "",
   "license": "ISC",
@@ -61,7 +62,8 @@
     "live-server": "^1.2.1",
     "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
-    "npm-watch": "^0.6.0"
+    "npm-watch": "^0.6.0",
+    "tinyify": "^2.5.2"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
