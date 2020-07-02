@@ -26,7 +26,7 @@
         "png"
       ]
     },
-    "js": "js/**",
+    "js:multi": "js/**",
     "build": {
       "patterns": [
         "pages"
@@ -37,6 +37,8 @@
   "scripts": {
     "js": "browserify js/app.js -t babelify -o build/js/app.js",
     "js:prod": "browserify -p tinyify js/app.js -t babelify -o build/js/app.js",
+    "js:multi": "./getAllJs.sh",
+    "js:multiprod": "./getAllJsProd.sh",
     "sass": "node-sass --output-style='nested' --source-map=true sass/ --output build/css/",
     "sass:prod": "node-sass --output-style='compressed' sass/ --output build/css/",
     "img": "cp -r images/ build/img/",
@@ -46,9 +48,9 @@
     "myEleventy:debug": "DEBUG=Eleventy* npx eleventy",
     "myEleventy:standard": "npx eleventy",
     "watch": "npm-watch",
-    "predev": "mkdir -p build && run-p sass js img",
+    "predev": "mkdir -p build && run-p sass js:multi img",
     "dev": "run-p preview watch",
-    "produce": "mkdir -p build && run-p sass:prod js:prod img build"
+    "produce": "mkdir -p build && run-p sass:prod js:multiprod img build"
   },
   "author": "",
   "license": "ISC",
