@@ -15,7 +15,7 @@ html, body {
   }
 }
 
-.anim-box {
+.simple-box {
   width: 100px;
   height: 100px;
   background-color: #00ff00;
@@ -24,7 +24,9 @@ html, body {
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+}
 
+.anim-box {
   &.active {
     background-color: #ff00ff;
     color: #ffffff;
@@ -35,3 +37,48 @@ html, body {
   }
 }
 
+.position-box {
+  position: relative;
+  left: 0;
+  transition: left 0.5s ease-in-out;
+
+  &.active {
+    left: -100px;
+  }
+}
+
+.scale-box {
+  transform: scale(1, 1);
+  transition: transform 0.25s ease-in-out;
+
+  &.active {
+    transform: scale(1.75, 1.75);
+  }
+}
+
+.rotate-box {
+  transform: rotate(0);
+  transition: transform 2s ease-in-out;
+
+  &.active {
+    transform: rotate(1800deg);
+  }
+}
+
+.translate-box {
+  transform: translate(0, 0);
+  transition: transform 0.625s ease-in-out;
+
+  &.active {
+    transform: translate(100%, 100%);
+  }
+}
+
+.multi-transform-box {
+  transform: scale(1, 1) rotate(0) translate(0, 0);
+  transition: transform 1.25s ease-in-out;
+
+  &.active {
+    transform: scale(5, 0.5) rotate(900deg) translate(0, -100%);
+  }
+}
