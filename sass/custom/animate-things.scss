@@ -1,0 +1,37 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+.animate-things-wrapper {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  > * {
+    margin: 1rem;
+  }
+}
+
+.anim-box {
+  width: 100px;
+  height: 100px;
+  background-color: #00ff00;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+
+  &.active {
+    background-color: #ff00ff;
+    color: #ffffff;
+  }
+
+  &.anim-box--transition {
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  }
+}
+
