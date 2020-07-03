@@ -47,11 +47,51 @@ p {
   }
 }
 
-ol {
+ol.animation-list {
+  padding-left: 1rem;
+
   li {
-    margin-bottom: 0.375rem;
+    position: relative;
+    padding-left: 0.625rem;
+
+    &:before {
+      content: "";
+      display: block;
+      background-color: rgba(#cdcdcd, 0.25);
+      width: calc(1em + 0.5rem);
+      height: calc(1em + 0.5rem);
+      position: absolute;
+      left: -1.625em;
+      top: 0;
+      border-radius: 50%;
+      border: 1px solid #323232;
+    }
+
+    margin-bottom: 0.625rem;
+    line-height: 1.5;
+
+    --foreground: #F4FE6C;
+    --background: #3B3F5D;
+
+    a {
+      display: inline-block;
+
+      color: var(--foreground);
+      background-color: var(--background);
+      text-decoration: none;
+      border-bottom: 4px solid var(--foreground);
+      padding: 0.125rem 0.5rem;
+
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        --foreground: #3B3F5D;
+        --background: #F4FE6C;
+      }
+    }
   }
 }
+
 // Code samples
 
 .code-wrapper {
