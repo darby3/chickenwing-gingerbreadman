@@ -82,3 +82,56 @@ html, body {
     transform: scale(5, 0.5) rotate(900deg) translate(0, -100%);
   }
 }
+
+@keyframes demoSample {
+  0% {
+    transform: none;
+  }
+
+  25% {
+    transform: translate(25%, 35%);
+  }
+
+  50% {
+    transform: rotate(400deg);
+  }
+
+  75% {
+    transform: scale(2, 2);
+  }
+
+  100% {
+    transform: translate(100%, 100%) rotate(800deg) scale(3, 3);
+  }
+}
+
+.css-keyframes-box {
+  &.active {
+    animation: 5s demoSample ease-in-out;
+  }
+}
+
+.css-keyframes-box--fill-forwards {
+  &.active {
+    animation: 5s demoSample ease-in-out forwards;
+  }
+}
+
+.css-keyframes-box--infinite {
+  animation: 2s demoSample ease-in-out infinite;
+}
+
+.css-keyframes-box--infinite-back-and-forth {
+  animation: 2s demoSample ease-in-out infinite alternate;
+}
+
+// The transition is on the target state: transition quickly to active, slowly back to the start
+.css-transitions-to-and-fro-box {
+  transform: scale(1, 1) translate(0, 0) rotate(0);
+  transition: transform 2s ease-in-out;
+
+  &.active {
+    transform: scale(2, 2) translate(0, 50%) rotate(45deg);
+    transition: transform 0.125s ease-in-out;
+  }
+}
