@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "getAllJs"
+echo "getAllJs started"
 
 for entry in js/*.js
 do
@@ -9,3 +9,5 @@ done
 
 mkdir -p build/js
 mv tmp/js/* build/js/
+
+echo "getAllJs ended"

@@ -226,3 +226,11 @@ html, body {
     top: -200px;
   }
 }
+
+// WAAPI
+
+.web-anim-api-abs-box {
+  position: absolute;
+  top: 25%;
+  left: calc(50% - 50px - 1rem);
+}
