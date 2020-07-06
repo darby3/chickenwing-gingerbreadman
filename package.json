@@ -68,6 +68,8 @@
     "tinyify": "^2.5.2"
   },
   "dependencies": {
+    "jquery": "^3.5.1",
+    "jquery.easing": "^1.4.1",
     "normalize.css": "^8.0.1"
   }
 }
