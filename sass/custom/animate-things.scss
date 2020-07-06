@@ -24,6 +24,7 @@ html, body {
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .anim-box {
@@ -126,6 +127,7 @@ html, body {
 }
 
 // The transition is on the target state: transition quickly to active, slowly back to the start
+
 .css-transitions-to-and-fro-box {
   transform: scale(1, 1) translate(0, 0) rotate(0);
   transition: transform 2s ease-in-out;
@@ -133,5 +135,94 @@ html, body {
   &.active {
     transform: scale(2, 2) translate(0, 50%) rotate(45deg);
     transition: transform 0.125s ease-in-out;
+  }
+}
+
+.transition-on-hover-box {
+  width: 200px;
+  height: 200px;
+  transform: scale(1, 1) rotate(0);
+  transition: all 0.25s ease;
+  background-color: #8df5c6;
+
+  &:hover {
+    transition: transform 0.75s ease-out, background-color 1.25s ease-in, color 0.375s ease-in, border-radius 2s ease-out;
+    cursor: pointer;
+    transform: scale(1.25, 1.25) rotate(-75deg);
+    background-color: #047644;
+    color: #fff;
+    border-radius: 45px;
+  }
+}
+
+.transition-end-event-box {
+  position: relative;
+  top: 0;
+  transition: top 4s ease;
+  text-transform: uppercase;
+
+  &.active {
+    top: -200px;
+  }
+}
+
+// Transition trigger boxes
+
+.transition-trigger-box-one,
+.transition-trigger-box-two {
+  position: relative;
+  left: 0;
+  transition: left 0.125s ease-out;
+
+  &.active {
+    transition: left 1s ease-in;
+  }
+}
+
+.transition-trigger-box-one {
+  &.active {
+    left: -100px;
+  }
+}
+
+.transition-trigger-box-two {
+  &.active {
+    left: 100px;
+  }
+}
+
+// Transition succession boxes.
+// Note: using super-short transition times on the "return" states because we need transition events to fire for boxes
+// two and three to reset. I could be less lazy and have the button toggle all the active states simultaneously if the
+// first is active, but I'm not doing that right now because I am lazy.
+
+.transition-succession-box-one,
+.transition-succession-box-two,
+.transition-succession-box-three {
+  position: relative;
+  left: 0;
+  top: 0;
+  transition: left 0.00001s linear, top 0.00001s linear;
+
+  &.active {
+    transition: left 0.5s ease-in-out, top 0.5s ease-in-out;
+  }
+}
+
+.transition-succession-box-one {
+  &.active {
+    left: -120px;
+  }
+}
+
+.transition-succession-box-two {
+  &.active {
+    left: 120px;
+  }
+}
+
+.transition-succession-box-three {
+  &.active {
+    top: -200px;
   }
 }
