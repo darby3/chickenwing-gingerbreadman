@@ -1,5 +1,7 @@
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
+    console.log(new Date());
+
     const button = document.querySelector('#addClass');
     const box = document.querySelector('#webAnimApiBox');
 
@@ -35,7 +37,7 @@
           backgroundColor: 'rgba(255,0,234,0.16)',
           opacity: 1
         }], {
-          duration: 1000,
+          duration: 200,
           easing: 'cubic-bezier(.99,0,.7,1)',
           fill: 'both'
         });
@@ -60,7 +62,7 @@
           backgroundColor: 'rgb(255,0,234)',
           opacity: 0
         }], {
-          duration: 1000,
+          duration: 2500,
           easing: 'cubic-bezier(0,.99,.81,1)',
           fill: 'both'
         });
