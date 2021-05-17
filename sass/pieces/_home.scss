@@ -1,5 +1,9 @@
 // New home page
 
+.home {
+  background-color: #24292D;
+}
+
 .home-page-section {
   margin: 4rem 0;
   padding-bottom: 4rem;
@@ -20,33 +24,73 @@
     align-items: center;
     justify-content: center;
   }
+
+  &.home__grid--max {
+    max-width: 1000px;
+    margin: auto;
+  }
+}
+
+
+.home__flex,
+.home__simple-links {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: normal;
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 0;
+  gap: 1rem;
 }
 
 .home__section {
   padding: 2rem 2rem;
 
   h1 {
-    margin: 2rem 0;
+    margin: 1rem 0 0.25rem;
   }
+
   h2 {
     margin: 1rem 0;
   }
+
+  border-bottom: 2px dotted var(--secondary);
 }
 
 .home__section--title {
-  --primary: #011233;
-  --secondary: #F57FAD;
+  --primary: #14282E;
+  --secondary: #DBD1A0;
 
-  text-align: center;
+  //text-align: center;
+
+  //max-width: 1200px;
+  margin: auto auto 3rem;
+
+  padding: 0.25rem 1rem;
 
   p {
     font-size: 1.5rem;
     font-style: italic;
+    margin: 0 0 1rem;
   }
 
   h1 {
     font-weight: 700;
+    font-size: 4rem;
   }
+
+  border-bottom: 10px dotted var(--secondary);
+}
+
+.home__section--title--alt {
+  --primary: #011233;
+  --secondary: #F57FAD;
+
+  max-width: calc(1000px - 2rem);
+  margin: auto;
+
+  padding: 0.5rem 1rem;
 }
 
 .home__section--variant-1 {
@@ -126,4 +170,60 @@
       color: var(--secondary);
     }
   }
+}
+
+.home__simple-links {
+  padding: 1rem 0;
+
+  --primary: #14282E;
+  --secondary: #DBD1A0;
+}
+
+.home__simple-links-alt {
+  --primary: #6CFEE6;
+  --secondary: #5A3B5D;
+  --padding-size: 2rem;
+  --linksize: 1.5rem;
+}
+
+.home__simplelink {
+  p {
+    margin: 0;
+  }
+
+  a {
+    --state1: var(--primary);
+    --state2: var(--secondary);
+
+    display: block;
+    padding: var(--padding-size, 1rem);
+    background: var(--state1);
+    color: var(--state2);
+    text-decoration: none;
+    transition: all 0.25s ease;
+    font-weight: bold;
+    font-size: var(--linksize, 1rem);
+
+    &:visited {
+      background: var(--state1);
+      color: var(--state2);
+    }
+
+    &:hover {
+      --state1: var(--secondary);
+      --state2: var(--primary);
+    }
+  }
+}
+
+.home__section__flexbreak {
+  flex-grow: 1;
+  width: 100%;
+
+  h3 {
+    margin: 0;
+  }
+
+  color: var(--primary);
+  background: var(--secondary);
 }
