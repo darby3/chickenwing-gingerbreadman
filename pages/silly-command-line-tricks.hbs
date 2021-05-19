@@ -112,4 +112,13 @@ git log --shortstat --reverse --pretty=oneline ./app.css | grep '1 file changed'
 find -s ./components/99-starters -type f -name README.md -exec bash -c "echo -n '## ' && echo {} | cut -d/ -f4" \; -a -exec cat {} \; -a -exec bash -c "echo -n {} | cut -d/ -f4 | sed 's/^...//' | awk '{print \"\n[Link](/components/detail/\"\$0\")\"}'" \; > docs/starters-list.md</pre></code>
 </section>
 
+<section class="basic_text_wrapper">
+    <p>Appending the contents of one file to many, many other files.</p>
+</section>
+
+<section class="code-wrapper">
+    <code><pre>
+find ./dir/ -type f -name '*.ext' -exec bash -c 'cat ./append-me.txt > "$1"' -- {}  \;</pre></code>
+</section>
+
 {{> bottombar }}
