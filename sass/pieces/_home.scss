@@ -2,6 +2,9 @@
 
 .home {
   background-color: #24292D;
+
+  background: linear-gradient(to top right, #1e768a, #1E588A);
+
 }
 
 .home-page-section {
@@ -59,8 +62,8 @@
 }
 
 .home__section--title {
-  --primary: #14282E;
-  --secondary: #DBD1A0;
+  --primary: #1a738d;
+  --secondary: #e1dac2;
 
   //text-align: center;
 
@@ -84,8 +87,8 @@
 }
 
 .home__section--title--alt {
-  --primary: #011233;
-  --secondary: #F57FAD;
+  --primary: #0ac4de;
+  --secondary: #033a44;
 
   max-width: calc(1000px - 2rem);
   margin: auto;
@@ -94,8 +97,8 @@
 }
 
 .home__section--variant-1 {
-  --primary: #6CFEE6;
-  --secondary: #5A3B5D;
+  --primary: #065245;
+  --secondary: #09ecc1;
   --linkcontrast: #fff;
 }
 
