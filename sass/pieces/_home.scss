@@ -90,10 +90,13 @@
   --primary: #0ac4de;
   --secondary: #033a44;
 
-  max-width: calc(1000px - 2rem);
-  margin: auto;
+  max-width: calc(1000px - 4rem);
+  margin: 4rem auto 0;
 
-  padding: 0.5rem 1rem;
+  padding: 1.5rem 2rem;
+
+  border-bottom-width: 8px;
+  border-bottom-style: dotted
 }
 
 .home__section--variant-1 {
@@ -189,6 +192,10 @@
   --linksize: 1.5rem;
 }
 
+p.home__simplelink {
+  margin: 0;
+}
+
 .home__simplelink {
   p {
     margin: 0;
@@ -225,6 +232,14 @@
 
   h3 {
     margin: 0;
+  }
+
+  h4 {
+    margin: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
   }
 
   color: var(--primary);
