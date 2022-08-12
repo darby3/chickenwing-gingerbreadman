@@ -123,3 +123,22 @@ html {
   }
 }
 
+// Griddifying things, a bit
+
+@media screen and (min-width: 800px) {
+  .home main > article > article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px dotted var(--offbg);
+    padding-bottom: 2rem;
+  }
+
+  .home article article article {
+    grid-column: 2 / 3;
+
+    &:not(:last-child) {
+      border-bottom: 1px dotted var(--offbg);
+      padding-bottom: 1.25rem;
+    }
+  }
+}
