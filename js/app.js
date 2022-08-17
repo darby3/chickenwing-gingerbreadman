@@ -19,6 +19,17 @@
         console.log('z = ', z);
         console.log('q = ', q);
 
+
+        // about link
+        const aboutLink = document.getElementById('aboutLink');
+        const aboutDialog = document.getElementById('about');
+
+        aboutLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            aboutDialog.showModal();
+        });
+
+
     });
 
 }());
