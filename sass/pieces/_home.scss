@@ -18,8 +18,8 @@ html {
     --inline-margin: 1rem;
 
     margin-block: 2rem 4rem;
-    width: 100%;
-    max-width: calc(100% - 2 * var(--inline-margin));
+    max-width: 1024px;
+    width: calc(100% - 2 * var(--inline-margin));
     margin-inline: var(--inline-margin);
     display: flex;
     flex-flow: column nowrap;
@@ -81,6 +81,20 @@ html {
     flex-flow: column nowrap;
     align-items: flex-start;
     gap: 0.25rem;
+
+    &.more-gap {
+      gap: 0.75rem;
+
+      li a {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+      }
+
+      li p {
+        font-size: 0.75rem;
+        line-height: 1.4;
+      }
+    }
   }
 
   ul li a {
