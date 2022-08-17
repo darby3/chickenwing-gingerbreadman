@@ -11,7 +11,6 @@ dialog#about {
   max-width: 800px;
   height: calc(100% - 6rem);
   max-height: 800px;
-  backdrop-filter: saturate(100%) blur(10px);
   padding-block: 2rem;
 
   button {
@@ -22,10 +21,40 @@ dialog#about {
 
   &::backdrop {
     background: rgba(100, 100, 155, 0.5);
-    backdrop-filter: saturate(100%) blur(3px);
+    backdrop-filter: saturate(100%) blur(10px);
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
   }
 
   h2, h3 {
     color: var(--offbg);
+  }
+
+  article {
+    display: block;
+
+    p {
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }
+  }
+
+  form#aboutForm {
+    @media screen and (min-width: 800px) {
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      gap: 0 2rem;
+
+      article {
+        grid-column: 2 / 3;
+        margin-top: 0.5rem;
+      }
+    }
   }
 }
