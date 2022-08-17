@@ -5,4 +5,27 @@
 @import 'pieces/grids';
 @import 'pieces/home';
 @import 'pieces/palettes';
-@import 'pieces/updates';
+
+dialog#about {
+  width: calc(100% - 6rem);
+  max-width: 800px;
+  height: calc(100% - 6rem);
+  max-height: 800px;
+  backdrop-filter: saturate(100%) blur(10px);
+  padding-block: 2rem;
+
+  button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  &::backdrop {
+    background: rgba(100, 100, 155, 0.5);
+    backdrop-filter: saturate(100%) blur(3px);
+  }
+
+  h2, h3 {
+    color: var(--offbg);
+  }
+}

@@ -10,11 +10,6 @@
         var hiThere = require("./modules/helloThere");
         hiThere();
 
-        var spatialManipulation = require("./modules/spatialManipulation");
-        if (document.querySelector('#spatial-manipulation-demo')) {
-            spatialManipulation();
-        }
-
         // uhm.js
         const y = 9;
         var x = a => 1 + 3 + a;
@@ -23,6 +18,17 @@
 
         console.log('z = ', z);
         console.log('q = ', q);
+
+
+        // about link
+        const aboutLink = document.getElementById('aboutLink');
+        const aboutDialog = document.getElementById('about');
+
+        aboutLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            aboutDialog.showModal();
+        });
+
 
     });
 
