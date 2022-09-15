@@ -135,6 +135,12 @@ html {
       }
     }
   }
+
+  main > article > article {
+    border: 1px solid var(--offbg);
+    padding: 1rem;
+    box-shadow: 6px 6px 18px 0px rgba(0, 0, 0, 0.25);
+  }
 }
 
 // Griddifying things, a bit
@@ -143,7 +149,6 @@ html {
   .home main > article > article {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-bottom: 1px dotted var(--offbg);
     padding-bottom: 2rem;
   }
 
