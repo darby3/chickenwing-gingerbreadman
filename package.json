@@ -26,6 +26,7 @@
         "png"
       ]
     },
+    "js": "js/**",
     "build": {
       "patterns": [
         "pages"
@@ -34,11 +35,8 @@
     }
   },
   "scripts": {
-    "js": "browserify js/app.js -t babelify -o build/js/app.js",
-    "js:prod": "browserify -p tinyify js/app.js -t babelify -o build/js/app.js",
-    "js:multi": "./getAllJs.sh",
-    "js:multiprod": "./getAllJsProd.sh",
-    "js:one": "onchange 'js/*.js' -- ./getOneJs.sh {{changed}}",
+    "js": "esbuild js/app.js --bundle --sourcemap  --minify --outfile=build/js/app.js",
+    "js:prod": "esbuild js/app.js --bundle --minify --outfile=build/js/app.js",
     "sass": "node-sass --output-style='nested' --source-map=true sass/ --output build/css/",
     "sass:prod": "node-sass --output-style='compressed' sass/ --output build/css/",
     "img": "cp -r images/ build/img/",
@@ -48,29 +46,22 @@
     "myEleventy:debug": "DEBUG=Eleventy* npx eleventy",
     "myEleventy:standard": "npx eleventy",
     "watch": "npm-watch",
-    "predev": "mkdir -p build && run-p sass js:multi img",
-    "dev": "run-p preview watch js:one",
-    "produce": "mkdir -p build && run-p sass:prod js:multiprod img build"
+    "predev": "mkdir -p build && run-p sass js img",
+    "dev": "run-p preview watch js",
+    "produce": "mkdir -p build && run-p sass:prod js:prod img build"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
-    "@babel/core": "^7.19.1",
-    "@babel/preset-env": "^7.19.1",
-    "babelify": "^10.0.0",
-    "browserify": "^17.0.0",
+    "esbuild": "^0.17.5",
     "gulp-extname": "^0.2.2",
     "live-server": "^1.2.2",
-    "node-sass": "^7.0.3",
+    "node-sass": "^8.0.0",
     "npm-run-all": "^4.1.5",
-    "npm-watch": "^0.11.0",
-    "onchange": "^7.1.0",
-    "tinyify": "^3.1.0"
+    "npm-watch": "^0.11.0"
   },
   "dependencies": {
-    "jquery": "^3.6.1",
-    "jquery.easing": "^1.4.1",
     "normalize.css": "^8.0.1"
   }
 }
