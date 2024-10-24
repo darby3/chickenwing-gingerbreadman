@@ -35,33 +35,16 @@
     }
   },
   "scripts": {
-    "js": "esbuild js/app.js --bundle --sourcemap  --minify --outfile=build/js/app.js",
-    "js:prod": "esbuild js/app.js --bundle --minify --outfile=build/js/app.js",
-    "sass": "node-sass --output-style='nested' --source-map=true sass/ --output build/css/",
-    "sass:prod": "node-sass --output-style='compressed' sass/ --output build/css/",
-    "img": "cp -r images/ build/img/",
-    "clean": "rm -r build/",
-    "preview": "live-server --no-browser --open=build/ --watch=build/ --mount=/:build/ --ignore=**/*tmp-browserify*",
-    "build": "run-s myEleventy:standard",
-    "myEleventy:debug": "DEBUG=Eleventy* npx eleventy",
-    "myEleventy:standard": "npx eleventy",
-    "watch": "npm-watch",
-    "predev": "mkdir -p build && run-p sass js img",
-    "dev": "run-p preview watch js",
-    "produce": "mkdir -p build && run-p sass:prod js:prod img build"
+    "build:dev": "npx @11ty/eleventy --serve --quiet --incremental",
+    "build:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
+    "build:prod": "npx @11ty/eleventy",
+    "dev": "npm run build:dev",
+    "produce": "npm run build:prod"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@11ty/eleventy": "^1.0.2",
-    "esbuild": "^0.17.5",
-    "gulp-extname": "^0.2.2",
-    "live-server": "^1.2.2",
-    "node-sass": "^8.0.0",
-    "npm-run-all": "^4.1.5",
-    "npm-watch": "^0.11.0"
-  },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-plugin-handlebars": "^1.0.0"
   }
 }

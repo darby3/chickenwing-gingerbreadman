@@ -1,4 +1,10 @@
+const handlebarsPlugin = require("@11ty/eleventy-plugin-handlebars");
+
 module.exports = function(eleventyConfig) {
+	eleventyConfig.addPlugin(handlebarsPlugin);
+
+  eleventyConfig.addPassthroughCopy("assets");
+
   // Merge data when cascading data
   eleventyConfig.setDataDeepMerge(true);
 
