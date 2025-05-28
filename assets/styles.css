@@ -513,7 +513,7 @@ template {
 }
 
 html {
-  font-size: 16px;
+  font-size: 28px;
 }
 
 .home {
@@ -577,15 +577,18 @@ html {
 }
 
 .home h1 {
-  font-size: 3rem;
+  font-size: clamp(1.429rem, 0.693rem + 5.882vi, 3.214rem);
+  text-wrap: balance;
+  line-height:  1.2;
+  margin-bottom:  1rem;
 }
 
 .home h2 {
-  font-size: 2.625rem;
+  font-size: clamp(1.071rem, 0.483rem + 4.706vi, 2.5rem);
 }
 
 .home h3 {
-  font-size: 1.75rem;
+  font-size: clamp(1.071rem, 0.777rem + 2.353vi, 1.786rem);
 }
 
 .home p {
