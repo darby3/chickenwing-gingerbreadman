@@ -1,50 +1,22 @@
 {
-  "name": "npmscriptsstarter",
+  "name": "cwgbm",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "nodemonConfig": {
-    "events": {
-      "start": "nodeMonNowIs=$(date +\"%T\") && echo Current Time: $nodeMonNowIs",
-      "crash": "osascript -e 'display notification \"Something Broke\" with title \"npmScriptsStarter\"'"
-    }
+  "description": "https://www.chickenwing-gingerbreadman.xyz/",
+  "homepage": "https://github.com/darby3/chickenwing-gingerbreadman#readme",
+  "bugs": {
+    "url": "https://github.com/darby3/chickenwing-gingerbreadman/issues"
   },
-  "watch": {
-    "sass": {
-      "patterns": [
-        "sass",
-        "scss"
-      ],
-      "extensions": "scss"
-    },
-    "img": {
-      "patterns": [
-        "images"
-      ],
-      "extensions": [
-        "jpg",
-        "png"
-      ]
-    },
-    "js": "js/**",
-    "build": {
-      "patterns": [
-        "pages"
-      ],
-      "extensions": "hbs"
-    }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darby3/chickenwing-gingerbreadman.git"
   },
-  "scripts": {
-    "build:dev": "npx @11ty/eleventy --serve --quiet --incremental",
-    "build:debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
-    "build:prod": "npx @11ty/eleventy",
-    "dev": "npm run build:dev",
-    "produce": "npm run build:prod"
-  },
-  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@11ty/eleventy": "^3.1.6",
-    "@11ty/eleventy-plugin-handlebars": "^1.0.0"
+  "type": "html",
+  "main": "index.js",
+  "scripts": {
+    "live": "node lives"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
   }
 }
