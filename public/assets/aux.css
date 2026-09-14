@@ -178,14 +178,6 @@
 }
 
 
-.home h2 {
-  font-size: clamp(1.071rem, 0.483rem + 4.706vi, 2.5rem);
-}
-
-.home h3 {
-  font-size: clamp(1.071rem, 0.777rem + 2.353vi, 1.786rem);
-}
-
 
 .home ul {
   margin: 0;
@@ -201,32 +193,10 @@
   gap: 0.75rem;
 }
 
-.home ul.more-gap li a {
-  display: inline-block;
-  margin-bottom: 0.5rem;
-  font-size: 1.5rem;
-  line-height: 1.5;
-}
 
 .home ul.more-gap li p {
   font-size: 1.5rem;
   line-height: 1.4;
-}
-
-.home ul li a {
-  display: block;
-  font-size: 1.5rem;
-  padding: 0.5rem;
-  line-height: 1.5;
-  background-color: var(--offbg);
-  color: var(--link);
-  text-decoration: none;
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
-
-.home ul li a:hover {
-  background-color: var(--title);
-  color: var(--bg);
 }
 
 .home article {
@@ -276,56 +246,3 @@
   }
 }
 
-dialog#about {
-  width: calc(100% - 6rem);
-  max-width: 800px;
-  height: calc(100% - 6rem);
-  max-height: 800px;
-  padding-block: 2rem;
-}
-
-dialog#about button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-}
-
-dialog#about::backdrop {
-  background: rgba(100, 100, 155, 0.5);
-  backdrop-filter: saturate(100%) blur(10px);
-}
-
-dialog#about h2 {
-  font-size: 2rem;
-}
-
-dialog#about h3 {
-  font-size: 1.5rem;
-}
-
-dialog#about h2,
-dialog#about h3 {
-  color: var(--offbg);
-}
-
-dialog#about article {
-  display: block;
-}
-
-dialog#about article p {
-  font-size: 0.875rem;
-  line-height: 1.4;
-}
-
-@media screen and (min-width: 800px) {
-  dialog#about form#aboutForm {
-    display: grid;
-    grid-template-columns: min-content 1fr;
-    gap: 0 2rem;
-  }
-
-  dialog#about form#aboutForm article {
-    grid-column: 2 / 3;
-    margin-top: 0.5rem;
-  }
-}
